@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pressão Arterial</string>
+    <string name="descricao">Entre com os valores de sua Pressão</string>
+    <string name="tvMinima">Pressão Minima: </string>
+    <string name="tvMaxima">Pressão Maxima: </string>
+    <string name="tvResultadoNascional">Resultado Nascional:</string>
+    <string name="tvResultadoInternacional">Resultado Internacional:</string>
+    <string name="btMedir">Medir</string>
+    <string name="btLimpar">Limpar</string>
+</resources>

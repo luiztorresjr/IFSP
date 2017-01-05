@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BancoDados</string>
+    <string name="textoMain">Escolha a opção:</string>
+    <string name="tituloCadastrar">Cadastro de Departamento</string>
+    <string name="tituloListar">Listar Departamentoss</string>
+    <string name="btCadastrarDep">Cadastrar Dep</string>
+    <string name="btListarDep">Listar Dep</string>
+    <string name="nome">Nome do departamento: </string>
+    <string name="local">Local: </string>
+    <string name="btGravar">Gravar</string>
+</resources>
