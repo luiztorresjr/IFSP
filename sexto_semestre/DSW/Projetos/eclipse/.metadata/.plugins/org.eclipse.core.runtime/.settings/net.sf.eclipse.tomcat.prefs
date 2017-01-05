@@ -1,0 +1,11 @@
+computeSourcePath=true
+configMode=serverFile
+contextsDir=C\:\\xampp\\tomcat\\conf\\Catalina\\localhost
+eclipse.preferences.version=1
+managerUrl=http\://localhost\:8080/manager
+projectsInSourcePath=Aula2;Aula3;Aula4;ExemploJSTL;
+tomcatBase=C\:\\xampp\\tomcat
+tomcatConfigFile=C\:\\xampp\\tomcat\\conf\\server.xml
+tomcatDir=C\:\\xampp\\tomcat
+tomcatJRE=1457633812157
+tomcatVersion=tomcatV7

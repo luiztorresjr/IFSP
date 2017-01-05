@@ -1,0 +1,7 @@
+#GlassFish 3
+#Fri Mar 11 02:53:13 BRT 2016
+org.eclipse.jst.jee.server\:Aula5=C\:\\Users\\Luiz\\Desktop\\programacao\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\Aula5
+org.eclipse.jst.jee.server\:Aula4=C\:\\Users\\Luiz\\Desktop\\programacao\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\Aula4
+org.eclipse.jst.jee.server\:Aula3=C\:\\Users\\Luiz\\Desktop\\programacao\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\Aula3
+org.eclipse.jst.jee.server\:Aula2=C\:\\Users\\Luiz\\Desktop\\programacao\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\Aula2
+org.eclipse.jst.jee.server\:Aula1=C\:\\Users\\Luiz\\Desktop\\programacao\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\Aula1
