@@ -1,0 +1,5 @@
+//Preeencher um vetor vet de 10 posições com numeros digitados pelo usuario.
+
+para i de 1 ate 10 faca 
+	leia(vet[i])
+fimpara

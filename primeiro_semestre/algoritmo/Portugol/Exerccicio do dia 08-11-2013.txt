@@ -1,0 +1,24 @@
+Olá, pessoal!
+
+Segue o enunciado dos exercícios que pedi para entregar na sala de aula:
+
+1) Declare variáveis para representar:
+a) um vetor com 100 elementos reais
+b) um vetor com 55 elementos inteiros
+c) uma matriz de dimensões 10 colunas por 50 linhas para guardar inteiros
+d) uma matriz de ordem 20 linhas por 15 colunas para guardar reais
+
+2) Escreva um trecho de código para:
+a) imprimir um vetor chamado vet com 100 elementos
+b) Imprimir uma matriz chamada M1 com dimensões de 300 linhas por 100 colunas
+
+3) Escreva um trecho de código que some os elementos:
+a) de um vetor de inteiro chamado vet com 100 elementos
+b) de uma matriz chamada M1 com 100 colunas por 25 linhas
+
+4) Escreva um algoritmo que preencha uma matriz 10x50 com números fornecidos pelo usuário. Em seguida solicite ao usuário para digitar um número qualquer. Contar quantas vezes este número encontra-se na matriz.
+
+Quem não veio na última aula, deverá entregar até a próxima aula.
+
+Att.,
+Andre

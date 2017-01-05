@@ -1,0 +1,12 @@
+Prezados,
+
+Segue algoritmo de problema envolvendo matriz que fizemos na última aula. O enunciado solicitava:
+- preencher a matriz com numeros digitado pelo usuario
+- contar quantos numeros impares estao na matriz
+- encontrar o menor numero da matriz
+- Guardar os elementos da matriz lida em outra matriz, mas em trocando a linha pela coluna
+
+Att.,
+Andre
+-- 
+ 
