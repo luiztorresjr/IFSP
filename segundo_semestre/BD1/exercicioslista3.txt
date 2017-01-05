@@ -1,0 +1,95 @@
+﻿DROP TABLE emp;
+DROP TABLE dep;
+--1 exercicio 
+
+--A) ESCREVA O COMANDO EM SQL CORRESPONDENTE A CRIAÇÃO DAS RELAÇÕES DA LISTA DE EXECICIOS 3. 
+CREATE TABLE dep(
+	cod_dep integer,
+	nome_dep varchar(20),
+	local_dep varchar(20),	
+	PRIMARY KEY(cod_dep)	
+	);
+
+INSERT INTO dep VALUES (10, 'Administracao', 'Campinas');
+INSERT INTO dep VALUES (20, 'Pesquisa', 'Campinas');
+INSERT INTO dep VALUES (30, 'Vendas', 'Sao Paulo');
+INSERT INTO dep VALUES (40, 'Producao', 'Sao Paulo');
+	
+CREATE TABLE emp(
+	cod_emp integer,
+	nome_emp varchar(20),
+	cargo varchar(20),
+	sal numeric (10,2) NOT NULL,
+	cod_dep int,
+	PRIMARY KEY(cod_emp),
+	FOREIGN KEY (cod_dep) REFERENCES dep(cod_dep)
+	);
+	
+INSERT INTO emp VALUES (103, 'Silvia', 'Analista', 1500.00, 20);
+INSERT INTO emp VALUES (110, 'Ubaldo', 'Diretor', 3000.00, 20);
+INSERT INTO emp VALUES (175, 'Pedro', 'Presidente', 5000.00, 10);
+INSERT INTO emp VALUES (189, 'Rosa', 'Diretor', 3300.00, 30);
+INSERT INTO emp VALUES (201, 'Eduardo', 'Vendedor', 2000.00, 30);
+INSERT INTO emp VALUES (208, 'Sergio', 'Vendedor', 1500.00, 30);
+INSERT INTO emp VALUES (230, 'Augusta', 'Secretaria', 1200.00, 10);
+INSERT INTO emp VALUES (276, 'Ronaldo', 'Analista', 1000.00, 20);
+
+	
+--B)LISTAR O NOME DOS FUNCIONARIOS QUE TEM O CARGO DE VENDEDOR.
+SELECT nome_emp FROM emp
+WHERE (cargo ='vendedor' OR cargo = 'Vendedor')
+
+
+--C)LISTAR OS DEPARTAMENTOS COM CODIGO 10 OU 40.
+SELECT * FROM dep
+WHERE (cod_dep = 10 OR cod_dep = 40)
+
+--D)LISTAR OS FUNCIONARIOS QUE GANHAM MAIS DE 1500.
+SELECT * FROM emp
+WHERE (sal > 1500)
+
+--E) LISTAR O NOME DE CADA FUNCIONARIO E O NOME SEU DEPARTAMENTO
+SELECT nome_emp,nome_dep
+FROM emp
+    ,dep
+WHERE emp.cod_dep=dep.cod_dep
+
+--F) LISTAR OS FUNCIONARIOS QUE TRABALHAM EM CAMPINAS OU HORTOLANDIA
+SELECT nome_emp
+FROM emp
+    ,dep
+WHERE emp.cod_dep=dep.cod_dep
+     AND(local_dep = 'Campinas' OR local_dep = 'Hortolandia')
+
+--G)LISTAR OS FUNCIONARIOS QUE NÃO TRABALAM EM CAMPINAS
+SELECT nome_emp,local_dep
+FROM emp
+    ,dep
+WHERE emp.cod_dep=dep.cod_dep
+     AND (local_dep <> 'Campinas')
+
+--2 exercicio
+
+--A)ESCREVA O COMANDO EM SQL CORRESPONDENTE A CRIAÇÃO DESSA RELAÇÕES 
+
+CREATE TABLE func(
+	cod_fun integer,
+	nome_fun varchar(30),
+	cargo varchar(20),
+	sal numeric(10,2),
+	cod_chefe integer,
+	PRIMARY KEY (cod_fun),
+	FOREIGN KEY (cod_chefe) REFERENCES func(cod_fun)
+	);
+
+
+CREATE TABLE depen(
+	num_depe integer, 	
+	nome_depe varchar(30),
+	sex char(20),
+	nasc_dep date,
+	par_dep varchar (20),
+	cod_fun integer,
+	PRIMARY KEY (num_dep),
+	FOREIGN KEY (cod_fun) REFERENCES func(cod_fun)
+	);
