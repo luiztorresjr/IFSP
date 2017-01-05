@@ -1,0 +1,58 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.io.File;
+
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+@SuppressWarnings("serial")
+public class EscolherArquvio extends JFrame {
+	private JTextArea areaSaida;
+	private JScrollPane jScrollPane;
+	
+	private JPanel contentPane;
+	
+	public EscolherArquvio() {
+		super("Escolher arquivo");
+		areaSaida = new JTextArea();
+		
+		jScrollPane = new JScrollPane(areaSaida);
+		add(jScrollPane, BorderLayout.CENTER);
+		setSize(400,400);
+		setVisible(true);
+		
+		analizarPasta();
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
+	}
+	@SuppressWarnings("unused")
+	private void obterAruivo(){
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+		
+		int resultado = fileChooser.showOpenDialog(this);
+		
+		if(resultado == JFileChooser.CANCEL_OPTION)
+			System.exit(1);
+		
+		File arquivoNome = fileChooser.getSelectedFile();
+		
+		if((arquivoNome == null) || (arquivoNome.getName().equals(""))){
+			
+		}
+	}
+
+}

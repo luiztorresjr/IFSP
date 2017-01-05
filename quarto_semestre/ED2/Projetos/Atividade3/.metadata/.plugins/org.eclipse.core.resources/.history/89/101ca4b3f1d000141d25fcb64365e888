@@ -1,0 +1,52 @@
+package model;
+
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
+
+public class Arquivo {
+	Arvore arvore = new Arvore();
+	String info;
+	private BufferedReader bufferedReader;
+	public Arquivo() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public Arvore lerArquivo(){		
+		String leitor= null;
+		String file = "arvore.txt";
+		try{
+			FileReader fileReader = new FileReader(file);
+			bufferedReader = new BufferedReader(fileReader);
+			while((leitor=bufferedReader.readLine())!= null){
+				String delims = ",";
+				StringTokenizer st = new StringTokenizer(leitor, delims);
+				while (st.hasMoreElements()) {					
+					System.out.println((int) st.nextElement());
+					arvore.inserir((int) st.nextElement());
+				}
+				System.out.println("valor inserido com sucesso");
+				return arvore;				
+			}
+			bufferedReader.close();
+		}catch(FileNotFoundException e){
+			info="Arquivo não encontrado";
+			System.out.println(info);
+		}catch (IOException e) {
+			info="formato incorreto";
+			System.out.println(info);
+		}catch (NumberFormatException e) {
+			info="problema conversão";
+			System.out.println(info);
+		}catch (ArrayIndexOutOfBoundsException e) {
+			info="problema com array";
+			System.out.println(info);
+		}
+		return arvore;
+	}
+}
+

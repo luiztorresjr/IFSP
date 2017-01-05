@@ -1,0 +1,25 @@
+package controller;
+
+import java.io.File;
+
+import model.Arquivo;
+import model.Arvore;
+
+public class MainController {
+	public MainController () {
+		
+	}
+	public void abrirManager(File local){		
+		Arquivo arquivo = new Arquivo();		
+		arquivo.abrirArquivo();
+		arquivo.lerArquivo();		
+		
+	}
+	public String statusArvore(){
+		Arvore arvore = new Arvore();
+		if(arvore.arvoreVazia())
+			return "Arvore Vazia";
+		else
+			return "Arvore não vazia";
+	}
+}

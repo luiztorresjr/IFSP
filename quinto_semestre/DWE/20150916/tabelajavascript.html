@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text tabela javascript</title>
+</head>
+<body>
+	
+	<script>
+		function funcao(){
+			document.write("<table>");
+			for (var i = 1; i <= 5; i++) {
+				document.write("<tr>");
+				for (var l = 1; l <= 5; l++) {
+					document.write("<td>"+[i*l]+"</td>");
+				}
+				document.write("</tr>");
+			}
+		}	
+	</script>
+	<button onclick="funcao()">Aperte</button>
+</body>
+</html>

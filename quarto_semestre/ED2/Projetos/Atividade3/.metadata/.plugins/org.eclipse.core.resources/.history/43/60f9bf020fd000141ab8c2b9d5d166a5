@@ -1,0 +1,29 @@
+package controller;
+public class importFile{
+public void importFile() {
+    JFileChooser chooser = new JFileChooser();//A
+    if (chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) { //a
+        try {
+            FileReader fr = new FileReader(chooser.getSelectedFile().getPath());
+            BufferedReader file_in = new BufferedReader(fr);
+            List lines = new List();
+            String line = new String("");
+            while ((line = file_in.readLine()) != null) {
+                list.add(line);
+                if (list.size() >= 3) {
+                    String[] nameArray = ((String)list.get(0)).split(" ");
+                    Contact c = new Contact (nameArray[1], nameArray[0], 
+                            (String)list.get(1), (String)list.get(2), 
+                            (String)list.get(3));
+                    contactList.add(c);
+                }
+                System.out.println(list.get(list.size()-1)); // Debug
+            }
+        }
+        catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+    }
+}
+}
+}

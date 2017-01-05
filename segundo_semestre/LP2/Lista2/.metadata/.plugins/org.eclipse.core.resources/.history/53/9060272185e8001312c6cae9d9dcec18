@@ -1,0 +1,16 @@
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+
+public class TelaCadastro extends JFrame implements ActionListener{
+	/**
+	 * @param args
+	 */
+	JLabel codigo, nome, endereco, numero, cidade, email,CEP;
+	JButton gravar,limpar;
+	JTextField textNome,textEndereco,textNumero,textCidade,textEmail,textCep;
+	
+	
+}

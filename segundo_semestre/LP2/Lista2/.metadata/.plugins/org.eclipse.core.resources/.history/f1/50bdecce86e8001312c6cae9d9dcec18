@@ -1,0 +1,32 @@
+import java.awt.Color;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+
+public class TelaCadastro extends JFrame implements ActionListener{
+	/**
+	 * @param args
+	 */
+	public TelaCadastro(){
+	JLabel codigo, nome, endereco, numero, cidade, email,CEP,telefone, nascimento,estado;
+	JButton gravar,limpar;
+	JTextField textNome,textEndereco,textNumero,textCidade,textEmail,textCep;
+	
+	setTitle("Tela de Cadastro");
+	setBounds(250,250,400,160);
+	getContentPane().setBackground(new Color(150,150,150));
+	nome = new JLabel("Nome.:");
+	nascimento = new JLabel("Data de Nascimento.:");
+	endereco = new JLabel("Endereço.:");
+	numero = new JLabel("Nº.:");
+	CEP = new JLabel("CEP.:");
+	cidade = new JLabel("Cidade.:");
+	estado = new JLabel("Estado.:");
+	telefone = new JLabel("Telefone.:");
+	email = new JLabel("Email.:");
+	}
+}

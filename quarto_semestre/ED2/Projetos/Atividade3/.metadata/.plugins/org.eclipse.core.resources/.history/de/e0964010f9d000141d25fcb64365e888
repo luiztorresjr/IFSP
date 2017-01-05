@@ -1,0 +1,30 @@
+package model;
+
+public class Arvore {
+	String info;
+	private ArvoreNo raiz;
+	
+	public Arvore(){
+		raiz=null;
+	}
+	public void inserirNo(int valor){
+		if(raiz ==null){
+			raiz = new ArvoreNo(valor);
+		}else{
+			raiz.inserir(valor);
+		}
+	}
+	public void preOrdem(){
+		preOrdemManter(raiz);
+	}
+	private String preOrdemManter(ArvoreNo no){
+		if(no == null){
+			return "Vazia";
+		info = no.dado;
+		System.out.printf("%d ", no.dado);
+		preOrdemManter(no.esquerda);
+		preOrdemManter(no.direita);
+		return info;
+		}
+	}
+}

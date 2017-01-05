@@ -1,0 +1,8 @@
+private void Data(){
+    Calendar cal = new GregorianCalendar();
+    int month =cal.get(Calendar.MONTH);
+    int year =cal.get(Calendar.YEAR);
+    int day =cal.get(Calendar.DAY_OF_MONTH);
+    cmb_date.addItem(+year+"-"+(month+1)+"-"+day);
+    cmb_date.addItem(+year+"-"+(month+1)+"-"+(day+1));
+} 

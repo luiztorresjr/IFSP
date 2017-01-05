@@ -1,0 +1,23 @@
+package model;
+
+public class Arvore {
+
+	public Arvore(){
+		
+	}	
+	public void inOrdem(){
+		
+	}
+	public void posOrdem(){
+		
+	}
+	public void preOrdem(){
+		
+	}
+	
+	public void obterArvore(){
+		
+	}
+	
+	
+}

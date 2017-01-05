@@ -1,0 +1,9 @@
+package br.soft.klon;
+
+import javax.swing.*;
+
+public class Tabela {
+	
+	Variaveis v = new Variaveis();
+	v.setL(Float.parseFloat(JOptionPane.ShowInputDialog("Entre com o comprimento: ")));
+}

@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+
+void aumento(gerente[],int i){
+	puts("Digite o salario: \n");
+	scanf("%d",&gerente[i].salario);
+	puts("Digite a porecentagem do aumento: ");
+	scanf("%d", &gerente[i].porcentagem);	
+	gerente[i].salario = gerente[i].salario + (gerente[i].salario*(gerente[i].porcentagem/100));
+}
+struct funcionario{
+	
+		char nome[30];
+		char funcao[30];
+		float salario;
+		int porcentagem
+	};
+	funcionario gerente[2];
+	
+	
+main(){
+	int i,por[2];
+	for(i=0;i<2;i++){
+		puts("Digite o nome: \n");
+		scanf("%s",&gerente[i].nome);
+		puts("Digite a funcao: \n");
+		scanf("%s",&gerente[i].funcao);
+		aumento(gerente[i],i)
+	}
+	for(i=0;i<2;i++){
+		puts("Nome: %s\nFuncao: %s\nSalario: %.2f", gerente[i].nome,gerente[i].funcao,gerente[i].salario);
+	}
+	system("pause");
+	}

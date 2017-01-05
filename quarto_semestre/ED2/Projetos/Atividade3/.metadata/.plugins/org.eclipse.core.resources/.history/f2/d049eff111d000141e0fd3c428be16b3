@@ -1,0 +1,66 @@
+package model;
+
+public class Arvore {
+	No raiz;
+	
+	public Arvore(){
+		raiz=null;
+	}	
+	
+	public boolean arvoreVazia(){
+		if(raiz == null) 
+			return true;
+		else	
+			return false;			
+	}
+	
+	public String inOrdem(No folha){
+		if(arvoreVazia())
+			return "Arvore Vazia";
+		
+		else{
+			inOrdem(folha.esquerdo);
+			return ""+folha.dado;
+			inOrdem(folha.direito);			
+		}
+	}
+	
+	public String posOrdem(){
+		if(arvoreVazia())
+			return "Arvore Vazia";
+	}
+	
+	public String preOrdem(){
+		if(arvoreVazia())
+			return "Arvore Vazia";
+		else{
+			return ;
+		}
+	}
+	
+	public void addNo(int valor){		
+		if(arvoreVazia()){
+			raiz = new No(valor);
+		}else{
+			No auxiliar = raiz;
+			if(valor <= auxiliar.dado){
+				if(auxiliar.esquerdo==null)
+					auxiliar.esquerdo = new No(valor);
+				else{
+					auxiliar = auxiliar.esquerdo;
+					addNo(valor);
+				}
+			}else if(valor > auxiliar.dado){
+				if(auxiliar.direito == null)
+					auxiliar.direito= new No(valor);
+				else{
+					auxiliar = auxiliar.direito;
+					addNo(valor);
+				}
+			}
+		}
+	}
+	
+	
+}
+

@@ -1,0 +1,12 @@
+package teste;
+
+import model.Arvore;
+
+public class Teste {
+	public static void main(String args[]){
+		//Instaciar a arvore
+		Arvore arvore = new Arvore();
+		//teste de arvore resultado = true
+		arvore
+	}
+}

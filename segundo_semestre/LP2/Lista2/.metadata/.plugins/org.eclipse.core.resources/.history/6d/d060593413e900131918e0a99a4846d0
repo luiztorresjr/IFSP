@@ -1,0 +1,91 @@
+package br.soft.theminister;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+
+public class TelaCadastro extends JFrame implements ActionListener{
+	private  Principal p;
+	public TelaCadastro(){
+		initComponent();
+	}
+	
+	
+		
+	public TelaCadastro(){
+	JLabel codigo, nome, endereco, numero, cidade, email,CEP,telefone, nascimento,estado;
+	JButton gravar,limpar;
+	JTextField textNome,textEndereco,textNumero,textCidade,textEmail,textCep,textTelefone;
+	
+	setTitle("Tela de Cadastro");
+	setBounds(250,250,400,160);
+	getContentPane().setBackground(new Color(150,150,150));
+	nome = new JLabel("Nome.:");
+	nascimento = new JLabel("Data de Nascimento.:");
+	endereco = new JLabel("Endereço.:");
+	numero = new JLabel("Nº.:");
+	CEP = new JLabel("CEP.:");
+	cidade = new JLabel("Cidade.:");
+	estado = new JLabel("Estado.:");
+	telefone = new JLabel("Telefone.:");
+	email = new JLabel("Email.:");
+	
+	gravar = new JButton("Gravar");
+	gravar.addActionListener(this);
+	limpar = new JButton("Limpar");
+	gravar.addActionListener(this);
+	
+	textNome = new JTextField();
+	textEndereco = new JTextField();
+	textNumero = new JTextField(); 
+	textCidade = new JTextField();
+	textEmail = new JTextField();
+	textCep = new JTextField();
+	textTelefone = new JTextField();
+	setLayout(null);
+	
+	nome.setBounds(10, 15, 45, 20);
+	nascimento.setBounds(10, 40, 75, 20);
+	endereco.setBounds(10, 65, 75, 20);
+	numero.setBounds(10, 90, 75, 20);
+	CEP.setBounds(10, 115, 75, 20);
+	cidade.setBounds(10, 140, 75, 20);
+	estado.setBounds(10, 165, 75, 20);
+	telefone.setBounds(10, 190, 75, 20);
+	email.setBounds(10, 215, 75, 20);
+	
+	add(nome);
+	add(endereco);
+	add(numero);
+	add(cidade);
+	add(email);
+	add(CEP);
+	add(telefone);
+	add(nascimento);
+	add(estado);
+	}
+	
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		Principal p = new Principal();
+		Cadastro c = new Cadastro();
+        c.setNome(nome.getText());
+        c.setEndereco(endereco.getText()); 
+        c.setTelefone(telefone.getText()); 
+        c.setCidade(cidade.getText());
+        c.setCep(cep.getText());
+        Dados d = new Dados (); 
+        d.Sistema(c);
+        d.Dados(c);
+	}
+	public void run() {
+       new TelaCadastro().setVisible(true);
+    }
+}

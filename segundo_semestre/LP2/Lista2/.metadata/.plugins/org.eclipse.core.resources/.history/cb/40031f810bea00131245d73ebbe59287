@@ -1,0 +1,21 @@
+package br.soft.theminister;
+import br.soft.theminister.Tela;;
+
+
+public class PartePrincipal {
+	
+	 private  PartePrincipal pp;
+	
+	 
+	public PartePrincipal() {  
+		t = new Tela(this.pp);
+	      
+	    }
+	
+	public static void main(String[] args) {
+	   
+    }
+       
+
+        
+}

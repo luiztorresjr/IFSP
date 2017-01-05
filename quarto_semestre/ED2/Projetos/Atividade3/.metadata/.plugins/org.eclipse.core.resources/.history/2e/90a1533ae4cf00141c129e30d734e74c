@@ -1,0 +1,11 @@
+package model;
+
+
+public class No {
+	public int dado;
+	public 
+	public No(){
+		
+	}
+
+}

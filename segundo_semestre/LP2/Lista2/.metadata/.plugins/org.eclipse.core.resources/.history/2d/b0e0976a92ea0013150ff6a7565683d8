@@ -1,0 +1,100 @@
+package br.soft.theminister;
+import java.util.Calendar;
+
+public class Data
+{
+// instance variables - replace the example below with your own
+private int Dia;
+private int Mês;
+private int Ano;
+public void setDia (int d) {
+Dia = d;
+}
+public int getDia () {
+return Dia;
+}
+public void setMês (int M) {
+Mês = M;
+}
+public int getMês () {
+return Mês;
+}
+public void setAno (int An){
+Ano = An;
+}
+public int getAno () {
+return Ano;
+}
+public static boolean bissexto(int intAno)
+{
+if ((intAno % 4 == 0 && intAno % 100 != 0) || (intAno % 400 == 0))
+return true;
+else
+return false;
+}
+public static boolean validaData(int intDia, int intMês, int intAno)
+{
+if ((intDia == 31) && (intMês == 4 || intMês == 6 || intMês == 9 || intMês == 11))
+{
+return false;
+}
+else
+{
+if(intDia >= 30 && intMês == 2)
+{
+return false;
+}
+else
+{
+if (intDia == 29 && intMês == 2 && !bissexto(intAno))
+{
+return false;
+}
+else
+{
+return true;
+}
+}
+}
+}
+
+class Data
+{
+public byte Dia,Mês;
+public short Ano;
+}
+{
+String resultado = ""+Dia;
+resultado += " de ";
+switch(Mês)
+{
+case 1: resultado += "Janeiro"; break;
+case 2: resultado += "Fevereiro"; break;
+case 3: resultado += "Março"; break;
+case 4: resultado += "Abril"; break;
+case 5: resultado += "Maio"; break;
+case 6: resultado += "Junho"; break;
+case 7: resultado += "Julho"; break;
+case 8: resultado += "Agosto"; break;
+case 9: resultado += "Setembro"; break;
+case 10: resultado += "Outubro"; break;
+case 11: resultado += "Novembro"; break;
+case 12: resultado += "Dezembro"; break;
+}
+resultado += " de "+Ano;
+}
+public byte diasNoMês()
+{
+byte númeroDeDias;
+switch(Mês)
+{
+case 2: númeroDeDias = 28; break;
+case 4:
+case 6:
+case 9:
+case 11: númeroDeDias = 30; break;
+default: númeroDeDias = 31; break;
+}
+return númeroDeDias;
+}
+} 

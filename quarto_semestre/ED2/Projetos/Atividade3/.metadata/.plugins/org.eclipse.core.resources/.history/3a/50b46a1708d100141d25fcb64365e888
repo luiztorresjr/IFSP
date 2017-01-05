@@ -1,0 +1,64 @@
+package model;
+
+import java.util.ArrayList;
+
+public class Arvore {
+	int info;	
+	private ArvoreNo raiz;
+	
+	public Arvore(){
+		raiz=null;
+	}
+	public void inserirNo(int valor){
+		if(raiz ==null){
+			raiz = new ArvoreNo(valor);
+		}else{
+			raiz.inserir(valor);
+		}
+	}
+	
+	public ArrayList<Integer> preOrdem(){
+		return preOrdemManter(raiz);
+	}
+	private ArrayList<Integer> preOrdemManter(ArvoreNo no){
+		ArrayList<Integer> array= new ArrayList<Integer>(); 
+		if(no == null)
+			return array;
+		array.add(no.dado);
+		System.out.printf("%d ", no.dado);
+		preOrdemManter(no.esquerda);
+		preOrdemManter(no.direita);
+		return array;
+		
+	}
+	
+	public ArrayList<Integer> inOrdem(){
+		return inOrdemManter(raiz);
+	}
+	private ArrayList<Integer> inOrdemManter(ArvoreNo no){
+		ArrayList<Integer> array= new ArrayList<Integer>();
+		if(no == null)
+			return array;
+		inOrdemManter(no.esquerda);
+		array.add(no.dado);
+		System.out.printf("%d ", no.dado);		
+		inOrdemManter(no.direita);
+		return array;		
+	}
+	
+	public ArrayList<Integer> posOrdem(){
+		return posOrdemManter(raiz);
+	}
+	private ArrayList<Integer> posOrdemManter(ArvoreNo no){
+		ArrayList<Integer> array= new ArrayList<Integer>();
+		if(no == null)
+			return array;
+		posOrdemManter(no.esquerda);
+		posOrdemManter(no.direita);
+		array.add(no.dado);
+		System.out.printf("%d ", no.dado);			
+		return array;		
+	}
+	
+	
+}

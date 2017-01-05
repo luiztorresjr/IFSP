@@ -1,0 +1,29 @@
+package model;
+
+public class Arvore {
+	No raiz;
+	
+	public Arvore(){
+		raiz=null;
+	}	
+	public arvoreVazia(){
+		if(raiz==null) true;
+		else	false
+			
+	}
+	public void inOrdem(){
+		
+	}
+	public void posOrdem(){
+		
+	}
+	public void preOrdem(){
+		
+	}
+	
+	public void obterArvore(){
+		
+	}
+	
+	
+}

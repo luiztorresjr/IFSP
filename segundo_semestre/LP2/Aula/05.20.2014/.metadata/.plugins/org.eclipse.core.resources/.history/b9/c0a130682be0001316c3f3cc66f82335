@@ -1,0 +1,20 @@
+package br.aula.ifsp;
+
+public class AplicacaoGrafica {
+
+	private AplicacaoGrafica ag;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub	
+		ag = new AplicacaoGrafica();
+	}
+	public AplicacaoGrafica(){
+		Tela1 t1 = new Tela1();
+	}
+	
+	public void gravarDados(Cliente c){
+		this.cliente =c;
+	}
+	private Cliente cliente;
+	
+}

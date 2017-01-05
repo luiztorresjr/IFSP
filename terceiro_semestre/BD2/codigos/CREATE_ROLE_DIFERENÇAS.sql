@@ -1,0 +1,3 @@
+﻿CREATE ROLE r1;
+CREATE ROLE r2 IN ROLE r1; --R2 membro de R1
+CREATE ROLE r3 ROLE r1; --R1 membro de R3

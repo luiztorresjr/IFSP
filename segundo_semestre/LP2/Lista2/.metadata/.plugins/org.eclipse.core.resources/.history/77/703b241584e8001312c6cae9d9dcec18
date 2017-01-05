@@ -1,0 +1,8 @@
+
+public class TelaCadastro extends JFrame{
+	/**
+	 * @param args
+	 */
+	JLabel codigo, nome, endereco, numero, cidade, email,CEP;
+	
+}

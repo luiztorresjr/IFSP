@@ -1,0 +1,48 @@
+1. Faça um programa que leia o código dos produtos pedidos e as quantidades desejadas. Calcule e mostre o valor a ser pago por produto (preço * quantidade) e o total do pedido. Considere que o cliente deve informar quando o pedido deve ser encerrado.
+
+Produto	Código	Preço (unitário)
+Cachorro quente	1	R$ 3,50
+Hamburger	2	R$ 4,00
+Cheeseburger	3	R$ 4,50
+Eggcheeseburger	4	R$ 5,00
+Refrigerante	5	R$ 3,50
+---------------------------------------------------------------------------------------------------------------
+#include "stdio.h"
+#include "stdlib.h"
+main(){
+  int op, qtde;    
+  float pagporpedido,totalpedido=0;
+  do{  
+    printf("Escolha o produto:\n");
+    printf("1 - Cachorro quente\n"); 
+    printf("2 - Hamburger\n");
+    printf("3 - Chesseburger\n");
+    printf("4 - Eggchesseburger\n");
+    printf("5 - Refrigerante\n");
+    printf("Opcao:"); scanf("%i",&op);
+    printf("Entre com a quantidade do pedido:");
+    scanf("%i",&qtde);
+    if(op==1) 
+          pagporpedido=qtde*3.50;
+    else if(op==2) 
+          pagporpedido=qtde*4;
+    else if(op==3)
+          pagporpedido=qtde*4.50;
+    else if(op==4)
+          pagporpedido=qtde*5;
+    else if(op==5)
+          pagporpedido=qtde*3.50;
+    else
+          printf("Opcao invalida\n");
+    totalpedido=pagporpedido+totalpedido;
+    printf("Mais alguma coisa 1 = SIM, 2 = NAO");
+    scanf("%i",&mais);
+  }while(mais==1);  
+  printf("\n\n");
+  printf("Total a pagar R$ %.2f",totalpedido);
+  system("pause");
+}
+
+
+  
+

@@ -1,0 +1,81 @@
+package controller;
+
+import java.io.*;  
+import java.util.*;  
+import javax.swing.*;  
+  
+public class EscolherArquivo extends JFrame {  
+      
+    /** Creates a new instance of learquivo */  
+    private ObjectInputStream input;  
+    private File filename;  
+    public leArquivo() {  
+          
+    }  
+      
+        /** 
+     *[b] TESTE[/b] 
+     *Le um arquivo de separa as colunas separadas 
+     *por TAB cria os Objetos PONTO 
+     *Poem num ArrayList e envia 
+     */  
+    public ArrayList pontosArray() throws IOException {  
+        BufferedReader in = new BufferedReader(new FileReader("/home/raphael/Develop/Java/IOGraf/Dados.txt"));  
+        String linha;  
+        StringTokenizer st=null;  
+        Ponto p;  
+        ArrayList lista= new ArrayList();  
+          
+        while ((linha=in.readLine())!= null) {  
+            //Separa a String em Tokens pelo argumento passado  
+            st=new StringTokenizer(linha,"\t");  
+            p = new Ponto(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));  
+            lista.add(p);  
+              
+        }  
+        in.close();  
+        return lista;  
+    }  
+    /** 
+     * 
+     *Le um arquivo indicado no parametro de separa as colunas separadas 
+     *por TAB cria os Objetos PONTO 
+     *Poem num ArrayList e envia 
+     */  
+      
+    public ArrayList pontosArray(String filename) throws IOException {  
+        BufferedReader in = new BufferedReader(new FileReader(filename));  
+        String linha;  
+        StringTokenizer st=null;  
+        Ponto p;  
+        ArrayList lista= new ArrayList();  
+          
+        while ((linha=in.readLine())!= null) {  
+            linha=in.readLine();  
+            //Separa a String em Tokens pelo argumento passado  
+            st=new StringTokenizer(linha,"\t");  
+            p = new Ponto(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));  
+            lista.add(p);              
+        }  
+        in.close();  
+        return lista;  
+    }  
+    public ArrayList pontosArray(File filename) throws IOException {  
+        BufferedReader in = new BufferedReader(new FileReader(filename),1*1024);  
+        String linha;  
+        StringTokenizer st=null;  
+        Ponto p;  
+        ArrayList lista= new ArrayList();  
+          
+        while ((linha=in.readLine())!= null) {  
+            linha=in.readLine();  
+            //Separa a String em Tokens pelo argumento passado  
+            st=new StringTokenizer(linha,"\t");  
+            p = new Ponto(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));  
+            lista.add(p);  
+              
+        }  
+        in.close();  
+        return lista;  
+    }  
+}  

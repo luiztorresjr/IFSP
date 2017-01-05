@@ -1,0 +1,182 @@
+﻿--TRABALHO FINAL DE BANCO DE DADOS II
+--BRUNO CHRISOSTOMO 	132052-1
+--LUIZ TORRES 			132067-X
+--PAULO IZUMI 			132076-9
+--RENATO BARBOSA 		132078-5
+
+DROP TABLE IF EXISTS farmacia CASCADE;
+DROP TABLE IF EXISTS medicamento CASCADE;
+DROP TABLE IF EXISTS funcionario CASCADE;
+DROP TABLE IF EXISTS estoque CASCADE;
+DROP TABLE IF EXISTS venda CASCADE;
+DROP TABLE IF EXISTS farmaceutico CASCADE;
+DROP TABLE IF EXISTS telefone CASCADE;
+DROP TABLE IF EXISTS cadastro_funcionario CASCADE;
+DROP TABLE IF EXISTS laboratorio CASCADE;
+DROP TABLE IF EXISTS medicamento_lab CASCADE;
+DROP FUNCTION IF EXISTS f_estoq() CASCADE;
+DROP FUNCTION IF EXISTS f_quant() CASCADE;
+
+
+CREATE TABLE farmacia(
+	cep INTEGER,
+	cod_farmacia INTEGER,
+	telefone INTEGER,
+	nome_farmacia VARCHAR(20),
+	PRIMARY KEY(cod_farmacia, cep)
+);	
+
+CREATE TABLE medicamento(
+	cod_medicamento integer,
+	nome_comercial varchar (30)NOT NULL,
+	viaDeAdm varchar (30) NOT NULL,	
+	PRIMARY KEY(cod_medicamento)
+);
+
+CREATE TABLE funcionario(
+	nome_funcionario VARCHAR(50),
+	cargo VARCHAR(20),
+	cod_funcionario INTEGER,
+	cpf INTEGER,
+	telefone INTEGER,
+	PRIMARY KEY(cod_funcionario, cpf)
+);
+
+CREATE TABLE laboratorio(
+	nome_laboratorio VARCHAR(50),
+	cod_laboratorio INTEGER,
+	PRIMARY KEY(cod_laboratorio)
+);
+
+CREATE TABLE estoque(
+	cep INTEGER,
+	cod_farmacia INTEGER,
+	cod_medicamento INTEGER,
+	quantidade_estoque INTEGER,
+	FOREIGN KEY (cep, cod_farmacia) REFERENCES farmacia (cep, cod_farmacia),
+	FOREIGN KEY (cod_medicamento) REFERENCES medicamento(cod_medicamento),
+	PRIMARY KEY(cep, cod_farmacia, cod_medicamento)
+);
+
+CREATE TABLE telefone(
+	cod_funcionario INTEGER,
+	cpf INTEGER,
+	telefone INTEGER,
+	FOREIGN KEY (cod_funcionario, cpf) REFERENCES funcionario(cod_funcionario, cpf), 
+	PRIMARY KEY (cod_funcionario, telefone)
+	);
+
+CREATE TABLE farmaceutico(
+	cod_funcionario INTEGER,
+	cpf INTEGER,
+	crf INTEGER,
+	FOREIGN KEY(cod_funcionario, cpf) REFERENCES funcionario(cod_funcionario, cpf),
+	PRIMARY KEY (crf)
+);
+
+CREATE TABLE cadastro_funcionario(
+	cep INTEGER,
+	cod_farmacia INTEGER,
+	cod_funcionario INTEGER,
+	cpf INTEGER,
+	FOREIGN KEY (cep, cod_farmacia) REFERENCES farmacia(cep, cod_farmacia),
+	FOREIGN KEY (cod_funcionario, cpf) REFERENCES funcionario ( cod_funcionario, cpf),
+	PRIMARY KEY(cep,cod_farmacia,cod_funcionario, cpf)
+);
+
+CREATE TABLE venda(
+	cod_funcionario INTEGER,
+	cpf INTEGER,
+	cod_medicamento INTEGER,
+	data_venda DATE,
+	quantidade_venda INTEGER,
+	hora TIME, 
+	id_venda INTEGER,
+	PRIMARY KEY(id_venda),
+	FOREIGN KEY(cod_funcionario, cpf) REFERENCES funcionario(cod_funcionario, cpf),
+	FOREIGN KEY(cod_medicamento) REFERENCES medicamento(cod_medicamento)
+);
+
+CREATE TABLE medicamento_lab(
+	cod_laboratorio INTEGER,
+	cod_medicamento INTEGER,
+	FOREIGN KEY (cod_laboratorio) REFERENCES laboratorio(cod_laboratorio),
+	FOREIGN KEY (cod_medicamento) REFERENCES medicamento (cod_medicamento),
+	PRIMARY KEY (cod_laboratorio, cod_medicamento)
+);	
+
+--função para atualizar valor em estoque quando for adicionado ou atualizado na tabela de vendas
+CREATE OR REPLACE FUNCTION f_estoq() RETURNS trigger AS $$
+DECLARE 
+	aux int;
+BEGIN
+
+	SELECT COUNT(quantidade_estoque)
+	INTO aux
+	FROM estoque
+	WHERE cod_medicamento = NEW.cod_medicamento;
+	
+	IF(aux < NEW.quantidade_venda) THEN
+		RETURN NULL;
+		RAISE NOTICE 'Quantia de venda maior que de estoque';
+	END IF;
+	--atualiza o estoque 
+	UPDATE estoque
+--seta a subtração do estoque 
+	SET quantidade_estoque = quantidade_estoque - NEW.quantidade_venda
+	WHERE cod_medicamento = NEW.cod_medicamento;
+	RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+--trigger para ser ativado antes que seja inserido ou atualiza para confirmar quanto tem no estoque.
+CREATE TRIGGER tg_estoq 
+BEFORE UPDATE OR INSERT
+ON vendas
+FOR EACH ROW
+EXECUTE PROCEDURE f_estoq();
+
+
+--Função para analisar quantia de remedios inseridos(novo)
+-- ou atualizado(remoção ou compra) do estoque
+CREATE FUNCTION f_quant() RETURNS trigger AS $$
+Declare 
+--variavel para facilitar a comparação para o uso do if
+	aux integer;
+BEGIN
+		--conta quantos medicamentos do cod selecionado tem em estoque
+		SELECT COUNT(quantidade_estoque)
+		INTO aux
+		FROM estoque
+		WHERE NEW.cod_medicamento = NEW.cod_medicamento;
+		--se tiver menos de 10 ou 10 medicamentos entrará neste if que avisa que 
+		--esta em pouca quantidade o medicamento atualizado ou inserido
+		IF(aux >10 ) THEN
+			RAISE NOTICE 'Estoque maior que 10'
+			RETURN NEW;
+		End IF;
+		IF(aux < 10)THEN			
+			RAISE NOTICE ' Estoque menor que 10.';
+			RETURN NEW;
+		END IF;		
+		RAISE NOTICE 'Estoque igual a 10.';
+		RETURN NEW;
+END;
+$$ Language plpgsql;	
+--o trigger será ativado a cada comando de update ou insert para calculo em tempo real
+--sempre antes do comando para mensagem ser mais precisa
+CREATE TRIGGER tg_quant 
+BEFORE INSERT OR UPDATE
+ON vendas
+FOR EACH ROW
+EXECUTE PROCEDURE f_quant();
+
+
+--este indice é para otimizar pesquisas no estoque com a tabela medicamento, para calculo 
+--e gerar relatorios mais rapidos para o usuario.
+
+CREATE INDEX idx_estoque ON estoque(cod_medicamento);
+CREATE INDEX idx_medicamento ON medicamento(cod_medicamento);
+
+
+

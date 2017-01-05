@@ -1,0 +1,22 @@
+Alocação estatica  x Alocação dinamica
+lista encadeada
+Manipulação da estrutura
+L.n->inicio.dados->
+
+como criar o primeiro elemento da lista
+#include<malloc.h> biblioteca usada para usar lista
+inicio=(struct nodo*)malloc(sizeof(struct nodo));
+if(inicio)// ou(if (inicio!= NULL))-testa se a memoria foi reservada
+{
+  inicio->dados=5;
+  inicio->proximo=NULL;
+  fim=inicio;
+}
+
+second=(struct nodo*)malloc(sizeof(struct nodo));
+if (second!= NULL)
+{
+  second->dados=7;
+  second->proximo=NULL;
+  fim->proximo=p;
+}

@@ -1,0 +1,57 @@
+package model;
+
+public class Arvore {
+	int info;
+	private ArvoreNo raiz;
+	
+	public Arvore(){
+		raiz=null;
+	}
+	public void inserirNo(int valor){
+		if(raiz ==null){
+			raiz = new ArvoreNo(valor);
+		}else{
+			raiz.inserir(valor);
+		}
+	}
+	public void preOrdem(){
+		preOrdemManter(raiz);
+	}
+	private int preOrdemManter(ArvoreNo no){
+		if(no == null)
+			return -1;
+		info = no.dado;
+		System.out.printf("%d ", no.dado);
+		preOrdemManter(no.esquerda);
+		preOrdemManter(no.direita);
+		return info;
+		
+	}
+	
+	public void inOrdem(){
+		inOrdemManter(raiz);
+	}
+	private int inOrdemManter(ArvoreNo no){
+		if(no == null)
+			return -1;
+		inOrdemManter(no.esquerda);
+		info = no.dado;
+		System.out.printf("%d ", no.dado);		
+		inOrdemManter(no.direita);
+		return info;		
+	}
+	public void posOrdem(){
+		posOrdemManter(raiz);
+	}
+	private int posOrdemManter(ArvoreNo no){
+		if(no == null)
+			return -1;
+		posOrdemManter(no.esquerda);
+		info = no.dado;
+		System.out.printf("%d ", no.dado);		
+		posOrdemManter(no.direita);
+		return info;		
+	}
+	
+	
+}

@@ -1,0 +1,40 @@
+package controller;
+
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+import model.Arvore;
+
+public class Arquivo {
+	String info;
+	Arvore arvore = new Arvore();
+	public Arquivo() {
+		// TODO Auto-generated constructor stub
+	}
+	public void lerArquivo(){		
+		String caminho = "arvore.txt"; 
+		File file = new File(caminho);
+		try {
+			@SuppressWarnings("resource")
+			Scanner scanner = new Scanner(file);
+			while (scanner.hasNext()){				
+				int valor = scanner.nextInt();
+				arvore.addNo(valor);
+			}
+		}catch(FileNotFoundException e){
+			info = "Arquivo não encontrado";
+			JOptionPane.showMessageDialog(null, info);
+		}
+			
+		}
+	
+}
+
+

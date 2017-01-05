@@ -1,0 +1,21 @@
+package br.soft.theminister;
+
+import javax.swing.JFrame;
+
+
+@SuppressWarnings("serial")
+public class PartePrincipal extends JFrame {
+	private PartePrincipal pp;
+	
+	 public PartePrincipal() {	      
+	      Tela t = new Tela(this.pp);
+	    }
+	
+	public static void main(String[] args) {
+		
+	   PartePrincipal pp = new PartePrincipal();
+    }
+       
+
+        
+}

@@ -1,0 +1,17 @@
+package Aula08l05l2014;
+
+import java.util.Comparator;
+
+@SuppressWarnings("rawtypes")
+public class ComparadorProdutoPorNome implements Comparator{
+
+	@Override
+	public int compare(Object ob1, Object ob2) {
+		// TODO Auto-generated method stub
+		Produto p1 = (Produto) ob1;
+		Produto p2 = (Produto) ob2;
+		return p1.getNome().compareTo(p2.getNome());
+		
+	}
+
+}

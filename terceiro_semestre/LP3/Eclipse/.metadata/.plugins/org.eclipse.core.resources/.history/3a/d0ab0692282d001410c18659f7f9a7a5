@@ -1,0 +1,57 @@
+package Aula08l05l2014;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+
+import javax.swing.JOptionPane;
+
+public class MostrarPrateleira {
+	String mensagem = new String();
+
+	public MostrarPrateleira() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@SuppressWarnings("unchecked")
+	public void Vizualizar(Prateleira prateleira){
+		if(prateleira.size()== 0){
+			mensagem = "Não há produto cadastrado";
+			JOptionPane.showMessageDialog(null, mensagem);
+		}
+		else {
+			Produto produto;
+			Iterator<Produto> i = prateleira.iterator();			
+			while(i.hasNext()){
+				produto = i.next();
+				mensagem += "Codigo: "+produto.getCod()+"      Nome: "+produto.getNome()+"      Preço: "+produto.getPreco()+"\n";
+			}
+			JOptionPane.showMessageDialog(null, mensagem);
+		}
+
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
+	public void VizualizarOrdemNome(Prateleira prateleira){
+		//Verifica se a prateleira possui itens atraves do if ... else prateleira.size
+		if(prateleira.size()== 0){
+			mensagem = "Não há produto cadastrado";
+			JOptionPane.showMessageDialog(null, mensagem);
+		}
+		else {
+			Produto produto;
+			Iterator<Produto> i = prateleira.iterator();
+			Comparator comparador = new ComparadorProdutoPorNome();
+			Collections.sort(prateleira, comparador);
+			String informacao = new String();
+			informacao = "Cod		Nome		Preço\n";	
+			while(i.hasNext()){
+				produto = i.next();
+				informacao += "Codigo: "+produto.getCod()+"      Nome: "+produto.getNome()+"      Preço: "+produto.getPreco()+"\n";
+			}
+			JOptionPane.showMessageDialog(null, mensagem);
+		}
+
+	}
+
+}

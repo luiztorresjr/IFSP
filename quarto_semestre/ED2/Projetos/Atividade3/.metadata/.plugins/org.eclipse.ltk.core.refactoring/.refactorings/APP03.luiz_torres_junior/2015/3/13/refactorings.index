@@ -1,0 +1,15 @@
+1426986862106	Delete element
+1427038048633	Delete element
+1427043081596	Convert local variable 'bufferedReader' to field
+1427046878856	Convert local variable 'bufferedReader' to field
+1427047555255	Move compilation unit
+1427049126261	Move compilation unit
+1427049356097	Move compilation unit
+1427050858587	Delete element
+1427052416872	Convert local variable 'folha' to field
+1427060626322	Infer generic type arguments
+1427070790286	Delete element
+1427071751358	Delete element
+1427072165546	Rename compilation unit 'Arvore.java'
+1427075107092	Convert local variable 'tokenizer' to field
+1427075112406	Convert local variable 'bufferedReader' to field

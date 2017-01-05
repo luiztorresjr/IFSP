@@ -1,0 +1,61 @@
+package model;
+
+import javax.swing.JOptionPane;
+
+public class Arvore {
+	int info;
+	private ArvoreNo raiz;
+	
+	public Arvore(){
+		raiz=null;
+	}
+	public void inserirNo(int valor){
+		if(raiz ==null){
+			raiz = new ArvoreNo(valor);
+		}else{
+			raiz.inserir(valor);
+		}
+	}
+	
+	public int preOrdem(){
+		return preOrdemManter(raiz);
+	}
+	private int preOrdemManter(ArvoreNo no){
+		if(no == null)
+			return -1;
+		info = no.dado;
+		 JOptionPane.showMessageDialog(null, no.dado);
+		preOrdemManter(no.esquerda);
+		preOrdemManter(no.direita);
+		return info;
+		
+	}
+	
+	public int inOrdem(){
+		return inOrdemManter(raiz);
+	}
+	private int inOrdemManter(ArvoreNo no){
+		if(no == null)
+			return -1;
+		inOrdemManter(no.esquerda);
+		info = no.dado;
+		 JOptionPane.showMessageDialog(null, no.dado);	
+		inOrdemManter(no.direita);
+		return info;		
+	}
+	
+	public int posOrdem(){
+		return posOrdemManter(raiz);
+	}
+	private int posOrdemManter(ArvoreNo no){
+		if(no == null)
+			return -1;
+		posOrdemManter(no.esquerda);
+		posOrdemManter(no.direita);
+		info = no.dado;
+		 JOptionPane.showMessageDialog(null, no.dado);			
+		return info;		
+	}
+	
+	
+}

@@ -1,0 +1,135 @@
+package view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+
+import controller.MainController;
+
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+@SuppressWarnings("serial")
+public class MainArvore extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField lbLocalizaArquivo;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainArvore frame = new MainArvore();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public MainArvore() {
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 359);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);	
+		
+		textField = new JTextField();
+		textField.setBounds(12, 268, 86, 22);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblEntreComO = new JLabel("Entre com o valor que quer buscar.:");
+		lblEntreComO.setBounds(9, 246, 181, 14);
+		contentPane.add(lblEntreComO);
+		
+		JLabel lbTituloResultado = new JLabel("Resultado.:");
+		lbTituloResultado.setBounds(179, 148, 80, 23);
+		contentPane.add(lbTituloResultado);
+		
+		JLabel lbResultado = new JLabel("");
+		lbResultado.setBackground(Color.BLACK);
+		lbResultado.setForeground(Color.RED);
+		lbResultado.setBounds(269, 135, 86, 55);
+		contentPane.add(lbResultado);
+		
+		lbLocalizaArquivo = new JTextField();
+		lbLocalizaArquivo.setBounds(12, 55, 86, 20);
+		contentPane.add(lbLocalizaArquivo);
+		lbLocalizaArquivo.setColumns(10);
+		
+		JLabel lblColoqueALocalizao = new JLabel("Coloque a localiza\u00E7\u00E3o do arquivo.:");
+		lblColoqueALocalizao.setBounds(9, 30, 167, 14);
+		contentPane.add(lblColoqueALocalizao);
+		
+		JButton btnArvoreVazia = new JButton("Arvore Vazia");
+		btnArvoreVazia.setBounds(15, 212, 100, 23);
+		contentPane.add(btnArvoreVazia);
+		
+		JButton btObterArvore = new JButton("Obter Arvore");
+		btObterArvore.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try{
+				//EscolherArquivo arquivo = new EscolherArquivo();
+				//arquivo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				MainController controller = new MainController();
+				controller.abrirManager(lbLocalizaArquivo.getText());
+				lbResultado.setText(controller.statusArvore());
+				}catch(NullPointerException e){
+					lbResultado.setText("Coloque a localização do arquivo");
+				}
+			}
+		});
+		btObterArvore.setBounds(108, 54, 111, 23);
+		contentPane.add(btObterArvore);
+		
+		JButton btInOrdem = new JButton("In-Ordem");
+		btInOrdem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btInOrdem.setBounds(12, 84, 103, 23);
+		contentPane.add(btInOrdem);
+		
+		JButton bt = new JButton("Pos-Ordem");
+		bt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		bt.setBounds(12, 124, 103, 23);
+		contentPane.add(bt);
+		
+		JButton btnNewButton_3 = new JButton("Pre-Ordem");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_3.setBounds(12, 167, 103, 23);
+		contentPane.add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("Buscar");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		btnNewButton_4.setBounds(108, 267, 89, 23);
+		contentPane.add(btnNewButton_4);
+	}
+}

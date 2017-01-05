@@ -1,0 +1,38 @@
+package controller;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.StringTokenizer;
+
+
+
+public class EscolherArquivo{
+	//C:/Users/Luiz/Desktop/arvore.txt
+	
+	public EscolherArquivo(){
+		
+	}
+	
+	public String lerArquivo(String destino){
+		destino.replace('\'', '/');
+		String dados = null;
+		String linha = null;
+		try{
+			FileReader fileReader = new FileReader(destino);
+			BufferedReader reader = new BufferedReader(fileReader);
+			StringTokenizer st = null;  
+			while((linha = reader.readLine())!=null){
+				st = new StringTokenizer(linha);
+				
+				while(st.hasMoreTokens()){
+					dados = st.nextToken();
+				}
+				fileReader.close();
+				reader.close();				
+			}
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return dados;
+	}
+}

@@ -1,0 +1,37 @@
+package Aula08l05l2014;
+
+import java.util.Collections;
+import java.util.Comparator;
+
+import javax.swing.JOptionPane;
+
+public class MostrarProduto {
+	Produto produto;
+	public MostrarProduto() {
+		// TODO Auto-generated constructor stub
+	}
+	public void mostrar(Produto produto){
+		
+		String mensagem = new String();		
+		mensagem ="Codigo      Nome      Preço\n      "+produto.getCod()+"            " +produto.getNome()+"     R$ "+produto.getPreco();
+		JOptionPane.showMessageDialog(null, mensagem);
+	
+	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public void produtoCaro(Prateleira prateleira){
+	
+		Comparator comparadorMax = new ComparadorProdutoPorNumero();
+		produto = (Produto) Collections.max(prateleira, comparadorMax);
+		mostrar(produto);
+	
+	}
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public void produtoBarato(Prateleira prateleira){
+	
+		Comparator comparadorMin = new ComparadorProdutoPorNumero();
+		produto = (Produto) Collections.min(prateleira, comparadorMin);
+		mostrar(produto);
+	
+	}
+}

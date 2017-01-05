@@ -1,0 +1,116 @@
+package Aula08l05l2014;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+
+import javax.swing.JOptionPane;
+
+public class Loja_j {
+
+	/**
+	 * @param args
+	 */
+	@SuppressWarnings({ "unchecked", "unused", "rawtypes" })
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Produto produto;
+		Prateleira prateleira = new Prateleira();
+		Iterator<Produto> i = prateleira.iterator();
+		CadastroProduto cp = new CadastroProduto();
+		
+
+		//		Cria um cadastro para 3 produtos
+		//		for(int c = 0; c < 2; c++){
+		//			produto = cp.cadastrar();
+		//			prateleira.add(produto);// cria uma prateleira para colocar os produtos em um arrayList
+		//		}		
+
+		MostrarProduto mostraProduto = new MostrarProduto();
+		MostrarPrateleira mp = new MostrarPrateleira();
+		//mp.Vizualizar(prateleira);
+		//		while(i.hasNext()){
+		//			produto = (Produto)i.next();			
+		//			//mp.mostrar(produto);	
+		//		}
+
+		Produto p2 = new Produto();
+		p2.setCod(2);
+		p2.setNome("Lapis");
+		p2.setDescricao("Lapis Preto");
+		p2.setPreco((float) 1.50);
+		prateleira.add(p2);
+
+		Produto p3 = new Produto();
+		p3.setCod(1);
+		p3.setNome("Apontador");
+		p3.setDescricao("Apontador de Lapis");
+		p3.setPreco((float) 5.50);
+		prateleira.add(p3);
+		
+		Produto p1 = new Produto();
+		p3.setCod(4);
+		p3.setNome("bolsa");
+		p3.setDescricao("bolsa escolar");
+		p3.setPreco((float) 55.50);
+		prateleira.add(p1);
+		
+		Produto p4 = new Produto();
+		p3.setCod(3);
+		p3.setNome("Caneta");
+		p3.setDescricao("Caneta azul");
+		p3.setPreco((float) 5.50);
+		prateleira.add(p4);
+		
+		Produto p5 = new Produto();
+		p3.setCod(1);
+		p3.setNome("Calculador");
+		p3.setDescricao("calculadora cientifica");
+		p3.setPreco((float) 5.50);
+		prateleira.add(p5);
+		int op=0;
+		String mens = "Selecione a opção\n1- \n2-Mostrar prateleira\n3-Mostrar em Prateleira Ordenado por nome\n4-Mostrar em Prateleira Ordenado por nome";
+		do{
+			switch(op){
+				case 1:
+					
+					break;
+				case 2:
+					//Mostrar a prateleir
+					mp.Vizualizar(prateleira);
+					break;
+				case 3:
+					//Mostrar a prateleira em ordem
+					mp.VizualizarOrdemNome(prateleira);
+					break;
+				case 4:
+					mp.VizualizarOrdemPreco(prateleira);
+					break;
+				case 5:
+					Comparator comparadorMax = new ComparadorProdutoPorNumero();
+					produto = (Produto) Collections.max(prateleira, comparadorMax);
+					mostraProduto.mostrar(produto);
+					break;
+				case 6:
+					Comparator comparadorMin = new ComparadorProdutoPorNumero();
+					produto = (Produto) Collections.min(prateleira, comparadorMin);
+					mostraProduto.mostrar(produto);
+					break;
+				case 7:
+					JOptionPane.showMessageDialog(null, "Saindo.....");
+					break;
+				default:
+					
+					break;					
+			}
+		}while(op !=5);
+		
+		
+
+
+		
+		//MostrarOrdem mp = new MostrarOrdem();
+		
+	}
+
+}

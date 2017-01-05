@@ -1,0 +1,24 @@
+package br.aula.ifsp;
+
+
+import java.awt.*;
+import javax.swing.JFrame;
+
+public class Tela1 extends JFrame {
+	public Tela1(){
+		//construtor padrão
+	}
+	public Tela1(AplicacaoGrafica ag){
+		this.ag=ag;
+	}
+	private AplicacaoGrafica ag;
+	
+	private void jButton1ActionPerformed(ActionEvent evt){
+	Cliente c = new Cliente();
+	
+	c.setNome(jTextField1.getText());
+	c.setEndereco(jTextField2.getText());
+	
+	ag.gravarDados(c);
+	}
+}

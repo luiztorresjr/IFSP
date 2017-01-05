@@ -1,0 +1,32 @@
+package controller;
+
+import model.Arquivo;
+import model.Arvore;
+
+public class MainController {
+	public Arvore arvore;
+	public MainController () {
+		
+	}
+	public void abrirManager(String caminho){		
+		Arquivo arquivo = new Arquivo();		
+	}
+	
+	public String statusArvore(){
+		arvore = new Arvore();
+		if(arvore.arvoreVazia())
+			return "Arvore Vazia";
+		else
+			return "Arvore não vazia";
+	}
+	public String inOdemManager(){
+		return ""+arvore.inOndem();
+	}
+	public String preOdemManager(){
+		
+	}
+	public String posOdemManager(){
+		
+	}
+
+}

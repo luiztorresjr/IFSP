@@ -1,0 +1,49 @@
+package controller;
+
+import model.Arquivo;
+import model.Arvore;
+
+public class MainController {
+	public Arvore arvore;
+	Arquivo arquivo;
+	public MainController () {
+		
+	}	
+	public void adicionaArvore(){
+		String linha[] = arquivo.lerArquivo().split(",");
+		int[] intArray = new int[linha.length];
+		for(int i= 0; i <= linha.length; i++){
+			intArray[i] = Integer.parseInt(linha[i]);
+			arvore.addNo(intArray[i]);
+		}
+		
+	}
+	public String statusArvore(){
+		if(arvore.arvoreVazia())
+			return "Arvore Vazia";
+		else
+			return "Arvore não vazia";
+	}
+	
+	public void inOdemManager(){
+		arvore.inOndem();
+	}
+	public void preOdemManager(){
+		arvore.preOrdem();
+	}
+	public  void posOdemManager(){
+		arvore.posOrdem();
+	}	
+	
+	public String statusBusca(int valor){
+		if(arvore.arvoreVazia()){
+			return "Arvore Vazia";
+		}else{
+			if(arvore.buscaNo(valor) == true)
+				return "Valor Encontrado";
+			else
+				return "Valor não encontrado";
+		}
+	}
+
+}

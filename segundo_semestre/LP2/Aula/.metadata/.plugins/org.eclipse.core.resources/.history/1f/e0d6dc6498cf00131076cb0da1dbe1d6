@@ -1,0 +1,10 @@
+package intefaces;
+
+import javax.swing.*;
+
+
+public class TesteJLabel extends JFrame {
+	private JLabel label1, label2, label3;
+	
+	
+}

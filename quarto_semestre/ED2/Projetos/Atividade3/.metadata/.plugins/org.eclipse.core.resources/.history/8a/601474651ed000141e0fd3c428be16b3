@@ -1,0 +1,27 @@
+package controller;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+
+
+public class EscolherArquivo{
+	//C:/Users/Luiz/Desktop/arvore.txt
+	
+	public EscolherArquivo(){
+		
+	}
+	
+	public void lerArquivo(String destino){
+		destino.replace('\'', '/');
+		try{
+			FileReader fileReader = new FileReader(destino);
+			BufferedReader reader = new BufferedReader(fileReader);
+			while(reader.ready()){
+				
+			}
+		}catch(){
+			
+		}
+	}
+}

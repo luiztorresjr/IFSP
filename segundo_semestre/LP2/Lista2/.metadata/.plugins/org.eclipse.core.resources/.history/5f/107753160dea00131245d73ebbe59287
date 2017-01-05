@@ -1,0 +1,30 @@
+package br.soft.theminister;
+
+import javax.swing.JFrame;
+//import java.text.*;
+public class Tela{
+	JFrame tela = new JFrame();
+	public Tela(){		
+		
+	}
+
+	public Tela(PartePrincipal pp) {
+		// TODO Auto-generated constructor stub
+		tela.setVisible(true);
+		tela.setTitle("TELA DE CADASTRO");	
+		tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		tela.setSize(600, 600);
+				
+	}
+	/*public void Componente(){
+		JTextField tfend,tfnum,tfcid,tfest,tftel,tfemail;
+		JLabel lnome;
+		JLabel lnome,lnasc,lend,lnum,lcid,lest,ltel,lmail;
+		JButton gravar,limpar;
+		
+		lnome = new JLabel("Nome.:");
+	}*/
+	
+}
+
+

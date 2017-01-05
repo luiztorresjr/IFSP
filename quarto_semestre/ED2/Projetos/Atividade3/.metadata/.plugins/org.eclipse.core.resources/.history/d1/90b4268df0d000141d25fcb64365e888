@@ -1,0 +1,111 @@
+package model;
+
+public class Arvore {
+	public No raiz;
+	
+	public Arvore(){
+		raiz=null;
+	}	
+	
+	public boolean arvoreVazia(){
+		if(raiz == null) 
+			return true;
+		else	
+			return false;			
+	}
+	
+	public void inOndem(){
+		inOrdem(raiz);
+	}
+	
+	public String inOrdem(No folha){
+		if(arvoreVazia())
+			return "Arvore Vazia";
+		
+		else{
+			inOrdem(folha.esquerdo);
+			String valor=""+folha.dado;
+			inOrdem(folha.direito);	
+			return valor;
+		}
+	}
+	
+	public String posOrdem(){
+		return posOrdem(raiz);
+	}
+	
+	public String posOrdem(No folha){
+		if(arvoreVazia())
+			return "Arvore Vazia";
+		
+		else{
+			posOrdem(folha.esquerdo);			
+			posOrdem(folha.direito);	
+			String valor=""+folha.dado;
+			return valor;
+		}
+	}
+	
+	public void preOrdem(){
+		preOrdem(raiz);
+	}
+	
+	public String preOrdem(No folha){
+		if(arvoreVazia())
+			return "Arvore Vazia";
+		else{
+			String valor=""+folha.dado;
+			System.out.println(valor);
+			preOrdem(folha.esquerdo);			
+			preOrdem(folha.direito);			
+			return valor;
+		}
+	}
+	public void inserir(int valor){
+		if(arvoreVazia()){
+			raiz = new No(valor);
+		}else{
+			inserir(raiz, valor);
+		}
+	}
+		
+	public void inserir(No folha, int valor){
+			if (valor <= folha.dado) {  
+	            if (folha.esquerdo != null) {  
+	                inserir(folha.esquerdo, valor);  
+	            } else {  
+	                System.out.println("  Inserindo " + valor + " a esqueda de " + folha.dado);  
+	                folha.esquerdo = new No(valor);  
+	            }  
+	        } else if (valor > folha.dado) {  
+	            if (folha.direito != null) {  
+	                inserir(folha.direito, valor);  
+	            } else {  
+	                System.out.println("  Inserindo " + valor + " a direita de " + folha.dado);  
+	                folha.direito = new No(valor);  
+	            }  
+	        }  
+		}
+	
+	
+	public boolean buscaNo(int valor){
+		
+		if(arvoreVazia())
+			return false;		
+		else{
+			No auxiliar = raiz;	
+			if(auxiliar.dado == valor)
+				return true;
+			else if(auxiliar.dado > valor){
+				auxiliar= auxiliar.esquerdo;
+				buscaNo(valor);
+			}
+			else if(auxiliar.dado < valor){
+				auxiliar= auxiliar.direito;
+				buscaNo(valor);
+			}else
+				return false;
+		}
+		return false;
+	}
+}

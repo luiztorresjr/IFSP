@@ -1,0 +1,16 @@
+package intefaces;
+
+import javax.swing.*;
+
+
+public class TesteJLabel extends JFrame {
+	private JLabel label1, label2, label3;
+	public TesteJLabel(){
+		super("Teste de uso do JLabel");
+		Container c = getContentPane();
+		c.setLayout(new FlowLayout());
+		label 1 = new JLabel("Teste do JLabel")
+	}
+	
+	
+}

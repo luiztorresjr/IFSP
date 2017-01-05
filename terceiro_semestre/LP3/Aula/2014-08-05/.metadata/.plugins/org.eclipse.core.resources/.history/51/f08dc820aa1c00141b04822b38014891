@@ -1,0 +1,29 @@
+package Partes;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+@SuppressWarnings("serial")
+public class Tela extends JFrame{
+	JFrame t = new JFrame();
+	
+	public Tela(){		
+		t.setSize(200,200);	
+		t.setTitle("Tela de Cadastro");
+		Campo();
+		
+	}
+	
+	public void Campo(){
+		JLabel nome = new JLabel();
+		JLabel sobre=new JLabel();
+		JLabel cidade = new JLabel();
+		JLabel estado = new JLabel();
+		JLabel pais = new JLabel();
+		t.add(nome);
+		t.add(sobre);
+		t.add(cidade);
+		t.add(estado);
+		t.add(pais);
+	}
+}

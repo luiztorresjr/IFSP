@@ -1,0 +1,36 @@
+package Partes;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+
+public class Princiapal {
+	
+	public static void main(String[] args){
+		func();
+	}
+	
+	private static void func() {
+		// TODO Auto-generated method stub			
+		Tela t = new Tela();
+		t.setVisible(true);
+		t.setSize(200,200);	
+		t.setTitle("Tela de Cadastro");			
+		JLabel nome = new JLabel("Nome.:");
+		/*JLabel sobre=new JLabel("Sobrenome.:");
+		JLabel cidade = new JLabel("Cidade.:");
+		JLabel estado = new JLabel("Estado.:");
+		JLabel pais = new JLabel("Pais.:");
+		JButton salva = new JButton("Salvar");
+		JButton limpa = new JButton("Limpar");
+		*/
+		/*t.add(limpa);
+		t.add(salva);*/
+		t.add(nome);
+		/*t.add(sobre);
+		t.add(cidade);
+		t.add(estado);
+		t.add(pais);
+		*/
+		t.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+	}
+}

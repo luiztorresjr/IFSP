@@ -1,0 +1,61 @@
+package Aula08l05l2014;
+
+import java.util.Collections;
+
+import javax.swing.JOptionPane;
+
+public class ProcurarProduto {
+
+	public ProcurarProduto() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	String mensagem = new String();
+	
+	//Algoritmo de procura binary search
+	@SuppressWarnings("unchecked")
+	public void localizarExibirProdutoCodigo(Prateleira prateleira) {
+		Produto mockup = new Produto();
+		Collections.sort(prateleira);
+		mensagem = "Entre com o codigo procurado :";
+		int codigo = Integer.parseInt(JOptionPane.showInputDialog(null,mensagem));
+		mockup.setCod(codigo);
+		int resultado = Collections.binarySearch(prateleira, mockup);
+		
+		if(resultado < 0)
+			JOptionPane.showMessageDialog(null, "Produto de codigo "+ codigo+" não encontarado");
+		
+		else {
+			MostrarProduto mostrarproduto = new MostrarProduto();
+			mostrarproduto.mostrar((Produto) prateleira.get(resultado));						
+		}
+	}
+	//Algoritmo de procura binary search usando para remover um item
+	@SuppressWarnings("unchecked")
+	public void removerProdutoCodigo(Prateleira prateleira) {
+		Produto mockup = new Produto();
+		Collections.sort(prateleira);
+		mensagem = "Entre com o codigo procurado :";
+		int codigo = Integer.parseInt(JOptionPane.showInputDialog(null,mensagem));
+		mockup.setCod(codigo);
+		int resultado = Collections.binarySearch(prateleira, mockup);
+		
+		if(resultado < 0)
+			JOptionPane.showMessageDialog(null, "Produto de codigo "+ codigo+" não encontarado");
+		
+		else {
+			
+			MostrarProduto mostrarproduto = new MostrarProduto();
+			mostrarproduto.mostrar((Produto) prateleira.get(resultado));
+			
+			int resp = Integer.parseInt(JOptionPane.showInputDialog(null,"Deseja deletar este produto\n1-Sim\n2-Não"));
+			if(resp == 1){
+				prateleira.remove(resultado);
+			}
+			else
+				JOptionPane.showMessageDialog(null, "Produto de codigo "+codigo+" não foi apagado.");						
+		}
+	}
+
+}

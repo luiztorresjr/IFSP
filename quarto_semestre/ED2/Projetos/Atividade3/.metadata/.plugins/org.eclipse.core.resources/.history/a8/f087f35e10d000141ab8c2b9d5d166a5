@@ -1,0 +1,9 @@
+package controller;
+
+public class EscolherArquivo {
+
+	public EscolherArquivo() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

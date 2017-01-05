@@ -1,0 +1,43 @@
+package br.soft.theminister;
+
+public class Date {
+	
+	private int mes;
+	private int ano;
+	private int dia;
+	
+	public Date(int omes, int odia, int oano) {
+		// TODO Auto-generated constructor stub
+		mes = checaMes( omes );
+		ano = oano;
+		dia = checaDia( odia );
+		
+		System.out.printf("Objeto construtor data %s\n", this);
+		}
+	private int checaMes( int testMes ){
+		if(testMes>0 && testMes<=12){
+			return testMes;
+		}
+		else{
+			System.out.printf("Mes invalido(%d) entra com 1.", testMes);
+			return 1;
+		}
+	}
+	private int checaDia( int testDia ){
+		int[] diaPorMes = {0 , 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		if(testDia > 0 && testDia<= diaPorMes[mes]){
+			return testDia;
+		}
+			if(mes == 2 && testDia == 29 && (ano % 400 == 0 || (ano % 4 == 0 && ano % 100 != 0))){
+			return testDia;
+		}
+		else {
+			System.out.printf("Dia invalido(%d) entra com 1.", testDia);
+			return 1;
+		}
+		
+	}
+	public String toString(){
+		return String.format("%d/%d/%d",dia,mes,ano);
+	}
+}

@@ -1,0 +1,11 @@
+package br.soft.theminister;
+
+public class Data{
+	
+
+public void setData( String data){
+	
+	int dia = Integer.parseInt(data.substring(0,2));
+	int mes = Integer.parseInt(data.substring(0,2));
+	int ano = Integer.parseInt(data.substring(0,2));
+}

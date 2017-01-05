@@ -1,0 +1,26 @@
+package br.soft.theminister;
+
+import javax.swing.JFrame;
+
+public class PartePrincipal extends JFrame{	         
+    
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public static void main(String[] args) {
+        @SuppressWarnings("unused")
+		PartePrincipal pp = new PartePrincipal();
+    }
+        private  PartePrincipal pp;
+        
+	@SuppressWarnings("unused")
+	private Cliente cliente;
+
+    public PartePrincipal() {
+        @SuppressWarnings("unused")
+		Tela_1 t1;
+        t1 = new Tela_1(this.pp);
+    }    
+}

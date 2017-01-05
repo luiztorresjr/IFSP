@@ -1,0 +1,41 @@
+<?php
+  include('banco.php');
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset ="utf-8"/>
+	<title>Lista de tranferência FIFA</title>
+	<style>
+		a{
+			text-decoration:none; 	
+		}
+		input{
+			margin: 5px;
+			border-radius: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Menu principal</h1>
+	<table>
+		<tr>
+		<td>
+		<a href = " http://localhost/DWE/fifa/escalacao.html"><input type="button" name ="botao" value="ESCALAÇÃO DO TIME" /></a>
+		</td>
+		<td>
+		<a href = " http://localhost/DWE/fifa/tranferencia.html"><input type="button" name ="botao" value="PROCURAR JOGADOR" /></a>
+		</td>	
+		</tr>
+		
+		<tr>
+		<td>
+		<a href = " http://localhost/DWE/fifa/tranferencia.php"><input type="button" name ="botao" value="CADASTRAR JOGADOR" /></a>
+		</td>
+		<td>
+		<a href = " http://localhost/DWE/fifa/CadastroPosicao.html"><input type="button" name ="botao" value="CADASTRAR POSICAO DE JOGADOR" /></a>
+		</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+import javax.swing.JFrame;
+
+
+public class Principal extends JFrame{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	   Principal p = new Principal();
+	    }
+	        private  Principal p;
+	        
+		private Cadastro cadastro;
+
+	    public Principal() {
+	        TelaCadastro tc;
+	        tc = new TelaCadastro(this.p);
+	    }    
+	
+
+}

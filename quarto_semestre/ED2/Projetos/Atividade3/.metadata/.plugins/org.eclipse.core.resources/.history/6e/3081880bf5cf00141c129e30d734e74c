@@ -1,0 +1,43 @@
+package model;
+
+public class Arvore {
+	No raiz;
+	
+	public Arvore(){
+		raiz=null;
+	}	
+	
+	public boolean arvoreVazia(){
+		if(raiz == null) 
+			return true;
+		else	
+			return false;			
+	}
+	
+	public String inOrdem(){
+		if(arvoreVazia())
+			return "Arvore Vazia";
+		else{
+			
+		}
+	}
+	
+	public String posOrdem(){
+		if(arvoreVazia())
+			return "Arvore Vazia";
+	}
+	
+	public String preOrdem(){
+		if(arvoreVazia())
+			return "Arvore Vazia";
+		else{
+			return ;
+		}
+	}
+	
+	public void adcionarNo(No folha){		
+		if(arvoreVazia())
+			raiz = folha;
+		}
+	}	
+

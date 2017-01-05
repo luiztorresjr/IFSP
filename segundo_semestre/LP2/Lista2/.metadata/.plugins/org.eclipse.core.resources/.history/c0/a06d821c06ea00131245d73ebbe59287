@@ -1,0 +1,9 @@
+package br.soft.theminister;
+
+public class Date {
+
+	public Date() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

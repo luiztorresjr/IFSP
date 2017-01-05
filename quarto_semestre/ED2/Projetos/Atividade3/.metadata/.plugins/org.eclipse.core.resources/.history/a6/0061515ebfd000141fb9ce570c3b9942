@@ -1,0 +1,107 @@
+package model;
+
+public class Arvore {
+	No raiz;
+	
+	public Arvore(){
+		raiz=null;
+	}	
+	
+	public boolean arvoreVazia(){
+		if(raiz == null) 
+			return true;
+		else	
+			return false;			
+	}
+	
+	public void inOndem(){
+		inOrdem(raiz);
+	}
+	
+	public String inOrdem(No folha){
+		if(arvoreVazia())
+			return "Arvore Vazia";
+		
+		else{
+			inOrdem(folha.esquerdo);
+			String valor=""+folha.dado;
+			inOrdem(folha.direito);	
+			return valor;
+		}
+	}
+	
+	public void posOrdem(){
+		posOrdem(raiz);
+	}
+	public String posOrdem(No folha){
+		if(arvoreVazia())
+			return "Arvore Vazia";
+		
+		else{
+			posOrdem(folha.esquerdo);			
+			posOrdem(folha.direito);	
+			String valor=""+folha.dado;
+			return valor;
+		}
+	}
+	
+	public void preOrdem(){
+		preOrdem(raiz);
+	}
+	
+	public String preOrdem(No folha){
+		if(arvoreVazia())
+			return "Arvore Vazia";
+		else{
+			String valor=""+folha.dado;
+			System.out.println(valor);
+			preOrdem(folha.esquerdo);			
+			preOrdem(folha.direito);			
+			return valor;
+		}
+	}
+	
+	public void addNo(int valor){		
+		if(arvoreVazia()){
+			raiz = new No(valor);
+		}else{
+			No auxiliar = raiz;
+			if(valor <= auxiliar.dado){
+				if(auxiliar.esquerdo==null)
+					auxiliar.esquerdo = new No(valor);
+				else{
+					auxiliar = auxiliar.esquerdo;
+					addNo(valor);
+				}
+			}else if(valor > auxiliar.dado){
+				if(auxiliar.direito == null)
+					auxiliar.direito= new No(valor);
+				else{
+					auxiliar = auxiliar.direito;
+					addNo(valor);
+				}
+			}
+		}
+	}
+	
+	public boolean buscaNo(int valor){
+		
+		if(arvoreVazia())
+			return false;		
+		else{
+			No auxiliar = raiz;	
+			if(auxiliar.dado == valor)
+				return true;
+			else if(auxiliar.dado > valor){
+				auxiliar= auxiliar.esquerdo;
+				buscaNo(valor);
+			}
+			else if(auxiliar.dado < valor){
+				auxiliar= auxiliar.direito;
+				buscaNo(valor);
+			}else
+				return false;
+		}
+		return false;
+	}
+}

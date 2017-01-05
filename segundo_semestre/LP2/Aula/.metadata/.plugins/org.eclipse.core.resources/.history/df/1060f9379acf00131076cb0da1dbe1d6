@@ -1,0 +1,11 @@
+package intefaces;
+
+public class JLabel {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TesteJLabel tjl = new TesteJLabel();
+		tjl.add
+	}
+
+}

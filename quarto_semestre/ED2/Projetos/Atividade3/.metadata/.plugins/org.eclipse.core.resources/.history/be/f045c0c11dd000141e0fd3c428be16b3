@@ -1,0 +1,15 @@
+package controller;
+
+
+
+public class EscolherArquivo{
+	//C:/Users/Luiz/Desktop/arvore.txt
+	
+	public EscolherArquivo(){
+		
+	}
+	
+	public void lerArquivo(String destino){
+		
+	}
+}

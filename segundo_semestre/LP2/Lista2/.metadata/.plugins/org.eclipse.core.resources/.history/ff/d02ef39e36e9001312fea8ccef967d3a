@@ -1,0 +1,22 @@
+package br.soft.theminister;
+
+import java.util.logging.Logger;
+
+import javax.swing.JFrame;
+
+public class PartePrincipal extends JFrame{	         
+    private static final long serialVersionUID = 1L;
+    private static final Logger LOG = Logger.getLogger(PartePrincipal.class.getName());
+
+    public static void main(String[] args) {
+        PartePrincipal ag = new PartePrincipal();
+    }
+        private  PartePrincipal pp;
+        
+	private Cliente cliente;
+
+    public PartePrincipal() {
+        Tela_1 t1;
+        t1 = new Tela_1(this.pp);
+    }    
+}

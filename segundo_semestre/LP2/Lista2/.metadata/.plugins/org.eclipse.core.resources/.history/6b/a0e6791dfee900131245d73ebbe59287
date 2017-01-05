@@ -1,0 +1,24 @@
+package br.soft.theminister;
+
+
+
+public class PartePrincipal {	         
+    
+    /**
+	 * 
+	 */
+	
+	public static void main(String[] args) {
+       PartePrincipal pp = new PartePrincipal();
+    }
+        private  PartePrincipal pp;
+        
+	
+	private Cliente cliente;
+
+    public PartePrincipal() {        
+	
+      Tela  t1 = new Tela();
+      t1.getClass(this.pp);
+    }    
+}

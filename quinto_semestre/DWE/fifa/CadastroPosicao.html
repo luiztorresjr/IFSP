@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro de posição de jogador</title>
+	<meta charset="utf-8">
+	<style >
+	a{
+			text-decoration:none; 	
+	}
+	label{
+        		width: 100px; 
+        		display: inline-block;
+        		color: blue
+      		}
+	</style>
+</head>
+<body>
+<h3>Cadastro de posições de jogador</h3>
+	<form action="posicao.php">
+		<label for="linha">Linha: </label>
+		<input type="text" name="linha" id="linha" required="required">
+		<br><br>
+		<label for="pos">Posição: </label>
+		<input type="text" name="pos" id="pos" required="required">
+		<br><br>
+		<input type="submit" name ="botao" value="cadastrar" />
+		<a href = " http://localhost/DWE/fifa/menuprincipal.html"><input type="button" name ="botao" value="voltar"/></a>
+	</form>
+</body>
+</html>

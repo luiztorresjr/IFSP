@@ -1,0 +1,13 @@
+package intefaces;
+
+public class JLabel {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TesteJLabel tjl = new TesteJLabel();
+		tjl.addWindowListener(new WindowAdapter(){
+			@Override
+		}
+		public void windowClosing (WindowEvent e){
+			System.exit(0)});
+		}

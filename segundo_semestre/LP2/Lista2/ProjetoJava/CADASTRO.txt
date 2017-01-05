@@ -1,0 +1,6 @@
+Nome do usuario: hjlasdf
+Endereço do usuario: asda
+Numero da casa: 0
+Cep do usuario: adsd
+Cidade do usuario: ads
+Telefone do usuario: ads

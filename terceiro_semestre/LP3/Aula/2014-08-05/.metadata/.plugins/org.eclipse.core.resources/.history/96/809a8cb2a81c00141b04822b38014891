@@ -1,0 +1,9 @@
+package Partes;
+
+public class Princiapal {
+	
+	public static void main(String[] args){
+		Tela t = new Tela();
+		t();
+	}
+}

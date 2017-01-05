@@ -1,0 +1,9 @@
+CREATE TABLE aluno(
+	prontuario varchar(20),
+	nome varchar(50),
+	data_nascimento date,
+	cod_curso int
+);
+
+CREATE TABLE curso(
+	

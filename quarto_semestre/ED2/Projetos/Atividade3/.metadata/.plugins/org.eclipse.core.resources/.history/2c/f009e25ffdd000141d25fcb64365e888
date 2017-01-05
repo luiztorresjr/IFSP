@@ -1,0 +1,46 @@
+package controller;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
+
+import model.Arvore;
+
+public class MainController {
+	String info;
+	Arvore arvore = new Arvore();
+	
+	public MainController(){
+		
+	}
+	public void obterArvore(){
+		String linha = null;
+		String caminho = "arvore.txt";		
+		try{
+			FileReader fileReader = new FileReader(caminho);
+			@SuppressWarnings("resource")
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			while((linha=bufferedReader.readLine())!=null){
+				
+			}
+			String str = linha;
+			String delimits = ",";
+			StringTokenizer tokenizer = new StringTokenizer(str, delimits);
+			while(tokenizer.hasMoreTokens()){
+					System.out.println(" "+tokenizer.nextToken());	
+			}
+		}
+		catch (FileNotFoundException f) {
+			info="Arquivo não encontrado";
+			System.out.println(info);	
+		}catch(IOException e){
+			info="Erro de entrada";
+			System.out.println(info);	
+		}catch(NullPointerException n){
+			info="Valor nulo";
+			System.out.println(info);
+		}
+	}
+}

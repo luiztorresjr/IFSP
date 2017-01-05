@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ex5</title>
+		<meta charset="utf-8"/>
+		<style>
+		label{
+			width: 200px; 
+			display: inline-block;
+		}
+		p{
+			margin: none;
+			font-weight: bold
+		}
+		
+		a{
+			text-decoration: none;
+			margin: 50px;
+		}
+		input[type=number]{     
+    			margin: 10px 10px 10px 10px;
+		}
+	</style>
+		</style>
+	</head>
+	<body>	
+		<form action="ex5.php">
+			<fieldset>
+			<legend>ex5</legend>
+				<p>Calculo da média de três valores informados e a média dos dois maiores e qual é a nota maior e a menor </p>
+				<label>Entre com o primeiro valor: </label>
+				<input type="number" name="num1" id="num1"  min="0" max ="10" required="required"/>
+				<br/>
+				<label>Entre com o segundo valor: </label>
+				<input type="number" name="num2" id="num2" required="required" min="0" max ="10"/>
+				<br/>
+				<label>Entre com o terceiro valor: </label>
+				<input type="number" name="num3" id="num3" required="required" min=0 max ="10"/>
+				<br/>
+				<a href = "http://localhost/DWE/20150909/menuprincipal.html"><input type="button" name ="botao" value="Menu Principal"/></a>
+				<input type="submit" value="calcular">
+			</fieldset>
+		</form>	
+	</body>
+</html>

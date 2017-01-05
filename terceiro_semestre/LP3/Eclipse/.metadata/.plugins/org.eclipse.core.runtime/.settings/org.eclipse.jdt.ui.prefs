@@ -1,0 +1,19 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="aula08l12l2014.VisualizarPrateleira"><rhs name\="aula08l12l2014.VisualizarOrdem"/></lhs><lhs name\="aula08l12l2014.VisualizarOrdem"><rhs name\="aula08l12l2014.VisualizarOrdem"/></lhs><lhs name\="java.util.ArrayList"><rhs name\="Aula08l05l2014.Prateleira"/></lhs><lhs name\="java.util.List"><rhs name\="Aula08l05l2014.Prateleira"/></lhs><lhs name\="java.util.RandomAccess"><rhs name\="Aula08l05l2014.Prateleira"/></lhs><lhs name\="java.lang.Cloneable"><rhs name\="Aula08l05l2014.Prateleira"/></lhs><lhs name\="java.util.Collection"><rhs name\="Aula08l05l2014.Prateleira"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="Aula08l05l2014.Prateleira"/></lhs><lhs name\="java.util.AbstractList"><rhs name\="Aula08l05l2014.Prateleira"/></lhs><lhs name\="java.util.AbstractCollection"><rhs name\="Aula08l05l2014.Prateleira"/></lhs><lhs name\="Aula08l05l2014.Prateleira"><rhs name\="Aula08l05l2014.Prateleira"/></lhs><lhs name\="Aula08l05l2014.CadastroProduto"><rhs name\="Aula08l05l2014.CadastroProduto"/></lhs><lhs name\="Aula08l05l2014.MostrarProduto"><rhs name\="Aula08l05l2014.MostrarProduto"/></lhs><lhs name\="Aula08l05l2014.MostrarPrateleira"><rhs name\="Aula08l05l2014.MostrarPrateleira"/><rhs name\="Aula08l05l2014.MostrarOrdem"/></lhs><lhs name\="java.lang.CharSequence"><rhs name\="java.lang.String"/></lhs><lhs name\="Aula08l05l2014.Produto"><rhs name\="Aula08l05l2014.Produto"/></lhs><lhs name\="java.util.Comparator"><rhs name\="Aula08l05l2014.ComparadorProdutoPorNumero"/></lhs><lhs name\="Aula08l05l2014.MostrarOrdem"><rhs name\="Aula08l05l2014.MostrarOrdem"/></lhs><lhs name\="Aula08l05l2014.ProcurarProduto"><rhs name\="Aula08l05l2014.ProcurarProduto"/></lhs></history>
+content_assist_number_of_computers=12
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+fontPropagated=true
+org.eclipse.jdt.ui.editor.tab.width=
+org.eclipse.jdt.ui.formatterprofiles.version=12
+org.eclipse.jdt.ui.javadoclocations.migrated=true
+org.eclipse.jdt.ui.text.code_templates_migrated=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.templates_migrated=true
+org.eclipse.jface.textfont=1|Courier New|10.0|0|WINDOWS|1|0|0|0|0|0|0|0|0|1|0|0|0|0|Courier New;
+proposalOrderMigrated=true
+spelling_locale_initialized=true
+tabWidthPropagated=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

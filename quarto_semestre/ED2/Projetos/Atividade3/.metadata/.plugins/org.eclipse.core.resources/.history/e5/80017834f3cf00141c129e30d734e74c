@@ -1,0 +1,84 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.io.File;
+
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.border.EmptyBorder;
+
+import controller.MainController;
+
+@SuppressWarnings("serial")
+public class EscolherArquivo extends JFrame {
+	private JTextArea areaSaida;
+	private JScrollPane jScrollPane;
+	
+	private JPanel contentPane;
+	
+	public EscolherArquivo() {
+		super("Escolher arquivo");
+		areaSaida = new JTextArea();
+		
+		jScrollPane = new JScrollPane(areaSaida);
+		add(jScrollPane, BorderLayout.CENTER);
+		setSize(400,400);
+		setVisible(true);
+		
+		analizarPasta();
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
+	}
+	public File obterArquivo(){
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+		
+		int resultado = fileChooser.showOpenDialog(this);
+		
+		if(resultado == JFileChooser.CANCEL_OPTION)
+			System.exit(1);
+		
+		File arquivoNome = fileChooser.getSelectedFile();
+		
+		if((arquivoNome == null) || (arquivoNome.getName().equals(""))){
+			JOptionPane.showMessageDialog(this, "Nome do arquivo invalido");
+		System.exit(1);
+		}
+		
+		return arquivoNome;
+	}
+	public void analizarPasta(){
+		File nome = obterAruivo();
+		
+		if(nome.exists()){
+			areaSaida.setText(String.format(
+					"%s%s\n%s\n%s\n%s\n%s%sn%s\n%s%sn%s\n%s%sn%s\n%s%sn%s\n%s%s",
+					nome.getName(),"existe",
+					(nome.isFile()?"é um arquivo":"não é um arquivo"),
+					(nome.isDirectory()?"é um diretorio":"não é um diretorio"),
+					(nome.isAbsolute()? "é uma path":"não é uma path"),"Ultima modificação: ",
+					nome .lastModified(),"tamanho", nome.length(),
+					"Path", nome.getPath(), "Absoluto path: ",nome.getAbsoluteFile(), "Parent: ",
+					nome.getParent()));
+			if (nome.isDirectory()){
+				String diretorio[] = nome.list();
+				areaSaida.append("\n\nConteudo do diretorio: \n");
+				
+				for(String diretorioNome:diretorio)
+					areaSaida.append(diretorioNome+"\n");
+			}
+		}else{
+			JOptionPane.showMessageDialog(this, nome+ "Não existe", "ERROR", JOptionPane.ERROR_MESSAGE);
+		}
+	}
+}

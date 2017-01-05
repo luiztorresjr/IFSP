@@ -1,0 +1,35 @@
+package Partes;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+@SuppressWarnings("serial")
+public class Tela extends JFrame{
+	
+	
+	public Tela(){	
+		JFrame t = new JFrame();
+		t.setSize(200,200);	
+		t.setTitle("Tela de Cadastro");			
+		JLabel nome = new JLabel("Nome.:");
+		JLabel sobre=new JLabel("Sobrenome.:");
+		JLabel cidade = new JLabel("Cidade.:");
+		JLabel estado = new JLabel("Estado.:");
+		JLabel pais = new JLabel("Pais.:");
+		JButton salva = new JButton("Salvar");
+		JButton limpa = new JButton("Limpar");
+		t.add(limpa);
+		t.add(salva);
+		t.add(nome);
+		t.add(sobre);
+		t.add(cidade);
+		t.add(estado);
+		t.add(pais);
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+	}
+	
+	public void Campo(){
+	
+	}
+}

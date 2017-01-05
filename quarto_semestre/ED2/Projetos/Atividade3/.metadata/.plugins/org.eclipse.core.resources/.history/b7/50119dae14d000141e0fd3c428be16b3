@@ -1,0 +1,28 @@
+package controller;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+
+import javax.swing.JFileChooser;
+
+public class EscolherArquivo {
+
+	public EscolherArquivo() {
+		try{
+		JFileChooser chooser = new JFileChooser();
+		chooser.showOpenDialog(null);
+		File noArquivo = chooser.getSelectedFile();
+		FileReader fileReader = new FileReader(noArquivo);
+		BufferedReader bufferedReader = new BufferedReader(fileReader);
+		String line = bufferedReader.readLine();
+		String read;
+		while(line !=null){
+			text.append(read).append("\n");
+		}
+		bufferedReader.close();
+	}catch(Exception e){
+		
+	}
+	}
+}
