@@ -1,0 +1,36 @@
+Adicionar usuario/grupo
+	adduser <nome.usuario>
+	groupadd <nome.grupo>
+Remover usuario/grupo
+	userdel -r <nome.usuario>
+	groupdel <nome.group>
+modificar alguns parâmetros
+	usermod
+	usermod -g <grupo>
+Adicionar usuario ao grupo
+	adduser <usuario> <grupo>
+Arquivo de usuario
+	cat \etc\passwd
+Arquivo de grupo
+	cat \etc\group
+Modificar o dono de um arquivo ou diretorio
+	chown -r<novodo> <arq/dir>
+modificar grupo
+chgpr 
+permissao para adm
+adduser <nome do usuario> sudo
+adduser <nome do usuario> adm
+
+modificar permissao do arquivo 
+chmod <permisao> <arq/dir>
+
+permisao absolutas
+0-nenhuma
+1-execução
+2-escrita
+4-leitura
+
+chmod 7 5 0
+7 dono total
+5 grupo execução e leitura
+0 outros nenhum
