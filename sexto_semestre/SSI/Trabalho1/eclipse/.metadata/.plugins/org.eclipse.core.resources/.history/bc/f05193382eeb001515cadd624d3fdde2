@@ -1,0 +1,29 @@
+package cap1;
+
+public class CifraCesar {
+		 
+	    public static void main(String[] args) {
+	 
+	        Object[][] alfabeto = criarMatrizAlfabeto(); 
+	 
+	        for(int i = 0; i < alfabeto.length; i++) {
+	            System.out.printf("%s (%s) %s", 
+	                alfabeto[i][1], 
+	                alfabeto[i][0], 
+	                (i+1) % 4 != 0 ? "\t" : "\n" );
+	        }
+	 
+	        System.out.println();
+	    }
+	 
+	    public static Object[][] criarMatrizAlfabeto() {
+	        int tamanho = 26; // total de letras do alfabeto
+	        Object[][] array = new Object[tamanho][];
+	        for(char i = 0, c = 'A'; c <= 'Z'; i++, c++) {
+	            int code = c; 
+	            array[i] = new Object[] { code, c };
+	        } 
+	        return array;
+	    }
+	}
+

@@ -1,0 +1,20 @@
+Layla Garcia Cortizo
+Paulo teruo Izumi
+Luiz Torres Jr.
+
+Politicas criadas:
+Será criado uma imagem do SO original para que  haja uma 
+
+
+Todos os usuarios devem mantem o anti-virus sempre atualizados.- De acordo com a 27002 é necessario que sejam implementados controles de detecção, prevenção e recuperação para proteger 
+contra códigos maliciosos, instalar e atualizar regularmente softwaresde detecção e remoção de códigos maliciosos para o 
+exame de computadores e mídias magnéticas, de forma preventiva ou de forma rotineira; convém 
+que as verificações realizadas incluam;
+
+Mantem as atualizaçoes do sistema operacional em dia.
+
+Enviar um relatorio mensal de todos os programas instalados em suas respectivas estações.Tendo em vista que a qualquer momento a gerencia pode solicitar a desisntalação
+do software e realizar uma vistoria da estação sem aviso prévio tornando passivo de multas e advertencias ao usuário. - De acordo com a 27002 é necessario implementar procedimentos para coletar regularmente informações, através por exemplo, de
+assinaturas de listas de discussão e visitas a sitesinformativos sobre novos códigos maliciosos; 
+
+Cada um deverá possuir um senha de acesso pessoal para que nao haja fraude de usuario.

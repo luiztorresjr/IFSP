@@ -1,0 +1,12 @@
+package cap1;
+
+public class CifraCesar{
+	
+	public CifraCesar() {
+		
+	}
+
+	public void criarCifra(){
+		
+	}
+}

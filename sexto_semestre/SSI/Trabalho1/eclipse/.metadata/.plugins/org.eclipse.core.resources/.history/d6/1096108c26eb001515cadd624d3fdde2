@@ -1,0 +1,22 @@
+package cap1;
+
+public class CifraCesar{
+	
+	
+	public CifraCesar() {
+		
+	}	
+	public String criptografia(String mensagem){
+		for(int i=0; i<mensagem.length(); i++){
+			troca(mensagem.charAt(i));
+		}
+		return mensagem;		
+	}
+	public void troca(char cifras){
+		for(char letra='a'; letra <= 'z'; letra++){
+			if(cifras == letra){
+				cifra= letra+3;
+			}
+		}
+	}
+}

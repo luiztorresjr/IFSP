@@ -1,0 +1,26 @@
+package cap1;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class CifraCesar{
+	
+	
+	public CifraCesar() {
+		
+	}	
+	public String criptografia(String mensagem){
+		for(int i=0; i<mensagem.length(); i++){
+			troca(mensagem.charAt(i));
+		}
+		return mensagem;		
+	}
+	public void troca(char letra){		
+		LinkedList<Character> cifra = new LinkedList<>();
+		for(char alfabeto='a'; alfabeto <= 'z'; alfabeto++){
+				cifra.add(alfabeto);
+			}
+		}
+		
+	}
+

@@ -1,0 +1,14 @@
+package cap1;
+
+public class CifraCesar{
+	
+	public CifraCesar() {
+		
+	}
+
+	public void criarCifra(){
+		for(char letra = 'a'; letra <= 'z'; letra++){
+			
+		}
+	}
+}

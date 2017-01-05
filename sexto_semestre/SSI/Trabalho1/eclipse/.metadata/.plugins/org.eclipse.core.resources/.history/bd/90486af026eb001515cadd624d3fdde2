@@ -1,0 +1,25 @@
+package cap1;
+
+import java.util.ArrayList;
+
+public class CifraCesar{
+	
+	
+	public CifraCesar() {
+		
+	}	
+	public String criptografia(String mensagem){
+		for(int i=0; i<mensagem.length(); i++){
+			troca(mensagem.charAt(i));
+		}
+		return mensagem;		
+	}
+	public void troca(char letra){
+		@SuppressWarnings("rawtypes")
+		ArrayList cifra = new ArrayList();
+		for(char alfabeto='a'; alfabeto <= 'z'; alfabeto++){
+				cifra.add(alfabeto);
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+package cap1;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class CifraCesar {
+
+	public static void main(String[] args){
+		troca();
+	}
+	public String criptografia(String mensagem) {
+		for (int i = 0; i < mensagem.length(); i++) {
+			mensagem.charAt(i);
+		}
+		return mensagem;
+	}
+
+	public static void troca() {
+		ArrayList<Character> alfabeto = new ArrayList<Character>();
+		for (char letra = 'a'; letra <= 'z'; letra++) {
+			alfabeto.add(letra);
+		}
+		int i=0;		
+		while(true){
+			char letra = alfabeto.get(i+3);
+			alfabeto.remove(i+3);
+			alfabeto.add(i, letra);
+		}
+	}
+
+}

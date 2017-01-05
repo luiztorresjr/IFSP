@@ -1,0 +1,16 @@
+package cap1;
+
+public class CifraCesar{
+	
+	private char[] cifras;
+	public CifraCesar() {
+		
+	}	
+	public String criptografia(String mensagem){
+		cifras = new char[mensagem.length()];
+		for(int i=0; i<mensagem.length(); i++){
+			
+		}
+		return mensagem;		
+	}
+}
